@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from "./app-routing.module";
+import { PagesRoutingModule } from "./pages/pages-routing.module";
 import { LoginComponent } from './pages/login/login.component';
 import { Page404Component } from './pages/error/page404/page404.component';
 import { Page404AltComponent } from './pages/error/page404-alt/page404-alt.component';
@@ -25,7 +26,8 @@ import { PagesComponent } from './pages/pages.component';
   imports: [
     BrowserModule,
     SharedModule,
-    AppRoutingModule
+    AppRoutingModule,
+    PagesRoutingModule
   ],
   providers: [
   ],
