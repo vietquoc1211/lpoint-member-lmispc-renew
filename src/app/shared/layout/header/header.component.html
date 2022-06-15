@@ -1,0 +1,50 @@
+<div class="navbar-custom">
+    <ul class="list-unstyled topbar-menu float-end mb-0">
+
+        <!-- start top search mobile -->
+        <li class="dropdown notification-list d-lg-none">
+            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button"
+                aria-haspopup="false" aria-expanded="false">
+                <i class="dripicons-search noti-icon"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
+                <form class="p-3">
+                    <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                </form>
+            </div>
+        </li>
+        <!-- end top search mobile -->
+
+        <!-- start select languages -->
+        <app-languages></app-languages>
+        <!-- end select languages -->
+
+        <!-- start notification -->
+        <app-notification></app-notification>
+        <!-- end notification-->
+
+        <!-- start brands -->
+        <app-brands></app-brands>
+        <!-- end brands-->
+
+        <!-- start setting layout -->
+        <li class="notification-list">
+            <a class="nav-link end-bar-toggle" href="javascript: void(0);">
+                <i class="dripicons-gear noti-icon"></i>
+            </a>
+        </li>
+        <!-- end setting layout -->
+
+        <!-- start account user login -->
+        <app-account-user></app-account-user>
+        <!-- end account user login -->
+
+    </ul>
+    <button class="button-menu-mobile open-left">
+        <i class="mdi mdi-menu"></i>
+    </button>
+
+    <!-- start top-search -->
+    <app-top-search></app-top-search>
+    <!-- end top-search -->
+</div>
