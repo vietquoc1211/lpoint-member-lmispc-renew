@@ -12,6 +12,7 @@ import { Page500Component } from './pages/error/page500/page500.component';
 import { Page406Component } from './pages/error/page406/page406.component';
 import { LogoutComponent } from './pages/logout/logout.component';
 import { PagesComponent } from './pages/pages.component';
+import { LpointAdminComponent } from './pages/lpoint-admin/lpoint-admin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { PagesComponent } from './pages/pages.component';
     Page500Component,
     Page406Component,
     LogoutComponent,
-    PagesComponent
+    PagesComponent,
+    LpointAdminComponent
   ],
   imports: [
     BrowserModule,
