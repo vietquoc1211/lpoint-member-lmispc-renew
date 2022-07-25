@@ -13,6 +13,10 @@ import { Page406Component } from './pages/error/page406/page406.component';
 import { LogoutComponent } from './pages/logout/logout.component';
 import { PagesComponent } from './pages/pages.component';
 import { LpointAdminComponent } from './pages/lpoint-admin/lpoint-admin.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ErrorInterceptor, JwtInterceptor } from './core/_helpers';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,9 +33,14 @@ import { LpointAdminComponent } from './pages/lpoint-admin/lpoint-admin.componen
     BrowserModule,
     SharedModule,
     AppRoutingModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })
