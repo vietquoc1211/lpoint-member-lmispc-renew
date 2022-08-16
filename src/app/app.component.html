@@ -1,1 +1,33 @@
-<router-outlet></router-outlet>
+
+<!-- Begin page -->
+<div class="wrapper">
+
+    <!-- ========== Left Sidebar Start ========== -->
+    <app-leftside-menu></app-leftside-menu>
+    <!-- Left Sidebar End -->
+
+    <div class="content-page">
+
+        <div class="content">
+            <!-- Header Start -->
+            <app-header></app-header>
+            <!-- end Header -->
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+                <router-outlet></router-outlet>
+            </div>
+            <!-- End Content -->
+        </div>
+
+        <!-- Start Footer-->
+        <app-footer></app-footer>
+        <!-- End Footer -->
+
+    </div>
+</div>
+
+<!-- Right Sidebar -->
+<app-right-sidebar></app-right-sidebar>
+<!-- /End-bar -->
+

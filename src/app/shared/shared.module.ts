@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import * as shared from './index';
 
 @NgModule({
@@ -28,7 +29,8 @@ import * as shared from './index';
       shared.AccountUserComponent
     ],
     imports: [
-
+      CommonModule,
+      RouterModule,
     ],
     providers: [
     ]
