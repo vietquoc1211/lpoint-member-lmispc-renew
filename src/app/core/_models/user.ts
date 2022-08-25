@@ -1,7 +1,5 @@
 ﻿export class User {
-    id?: number;
-    username?: string;
-    firstName?: string;
-    lastName?: string;
+    employeeno?: string;
+    employeename?: string;
     token?: string;
 }

@@ -1,6 +1,10 @@
 
+
+<div *ngIf="!currentUser">
+    <router-outlet></router-outlet>
+</div>
 <!-- Begin page -->
-<div class="wrapper">
+<div class="wrapper" *ngIf="currentUser">
 
     <!-- ========== Left Sidebar Start ========== -->
     <app-leftside-menu></app-leftside-menu>
@@ -15,6 +19,7 @@
 
             <!-- Start Content-->
             <div class="container-fluid">
+                <h1>User {{currentUser.employeename}}</h1>
                 <router-outlet></router-outlet>
             </div>
             <!-- End Content -->
@@ -30,4 +35,3 @@
 <!-- Right Sidebar -->
 <app-right-sidebar></app-right-sidebar>
 <!-- /End-bar -->
-

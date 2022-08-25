@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from 'src/app/core/_helpers/auth.guard';
 import * as _analysic from './analysis.index';
 
 const routes: Routes = [
   {
-    "path": "",
+    "path": "", canActivate: [AuthGuard],
     data: {
       title: 'Phân Tích'
     },
@@ -12,23 +13,17 @@ const routes: Routes = [
       {
         "path": "mart",
         "component": _analysic.ReportmonthlyMartComponent,
-        data: {
-          title: 'Mart monthly report'
-        }
+        canActivate: [AuthGuard] 
       },
       {
         "path": "dps",
         "component": _analysic.ReportmonthlyDPSComponent,
-        data: {
-          title: 'DPS monthly report'
-        }
+        canActivate: [AuthGuard] 
       }, 
       {
         "path": "ria",
         "component": _analysic.ReportmonthlyRIAComponent,
-        data: {
-          title: 'RIA monthly report'
-        }
+        canActivate: [AuthGuard] 
       },
     ]
   }
