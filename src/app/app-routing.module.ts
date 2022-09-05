@@ -16,6 +16,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/users/users.module').then((m) => m.UsersModule),
   },
   {
+    path: 'customer-grade',
+    loadChildren: () => import('./pages/customer-grade/customer-grade.module').then((m) => m.CustomerGradeModule),
+  },
+  {
     path: '',
     redirectTo: 'users/login',
     pathMatch: 'full'

@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row mb-2">
+                    <div class="col-sm-4">
+                        <a href="javascript:void(0);" class="btn btn-danger mb-2"><i
+                                class="mdi mdi-plus-circle me-2"></i>Thêm hạng thành viên</a>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="text-sm-end">
+                            <button type="button" class="btn btn-success mb-2 me-1"><i class="mdi mdi-cog"></i></button>
+                            <button type="button" class="btn btn-light mb-2 me-1" (click)="getData()">Search</button>
+                            <button type="button" class="btn btn-light mb-2">Export</button>
+                        </div>
+                    </div><!-- end col-->
+                </div>
+
+                <div class="tab-pane show active" id="buttons-table-preview">
+                    <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
+                        <thead>
+                            <tr>
+                                <th>Stt</th>
+                                <th>mã số khách hàng</th>
+                                <th>tên khách hàng</th>
+                                <th>phân loại hạng</th>
+                                <th>số điểm tích lũy</th>
+                                <th>ngày bắt đầu tham gia</th>
+                                <th>ngày kết thúc</th>
+                                <th>trạng thái</th>
+                                <th>quá trình kiểm tra</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of DataGrade; let i = index">
+                                <td>{{i+1}}</td>
+                                <td>{{data.memberno}}</td>
+                                <td>{{data.membernm}}</td>
+                                <td>{{data.grade}}</td>
+                                <td>{{data.revenue}}</td>
+                                <td>{{data.startymd}}</td>
+                                <td>{{data.endymd}}</td>
+                                <td>{{data.usegbn}}</td>
+                                <td>{{data.transcnt}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div> <!-- end preview-->
+                
+            </div> <!-- end card-body-->
+        </div> <!-- end card-->
+    </div> <!-- end col -->
+</div>
+
+<!-- spinner -->
+<ngx-spinner type="pacman"></ngx-spinner>
