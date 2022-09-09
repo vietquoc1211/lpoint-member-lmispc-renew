@@ -1,3 +1,21 @@
-p {
-    font-family: Lato;
-  }
+
+table {
+  width: 100%;
+}
+
+.mat-row:nth-child(odd){
+  background-color: beige;
+}
+
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+  min-width: 132px;
+}
+
+.tab-pane {
+  overflow: auto;
+}
+
+.mat-paginator {
+  display: flex;
+  justify-content: center;
+}

@@ -31,19 +31,12 @@
             ],
             "styles": [
               "src/assets/css/icons.min.css",
-              "src/assets/css/vendor/dataTables.bootstrap5.css",
               "src/assets/css/vendor/responsive.bootstrap5.css",
               "src/styles.css"
             ],
             "scripts": [
               "src/assets/js/vendor.min.js",
-              "src/assets/js/app.min.js",
-              "src/assets/js/vendor/jquery.dataTables.min.js",
-              "src/assets/js/vendor/dataTables.bootstrap5.js",
-              "src/assets/js/vendor/dataTables.responsive.min.js",
-              "src/assets/js/vendor/responsive.bootstrap5.min.js",
-              "src/assets/js/vendor/dataTables.checkboxes.min.js",
-              "src/assets/js/pages/demo.products.js"
+              "src/assets/js/app.min.js"
             ]
           },
           "configurations": {

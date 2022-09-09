@@ -30,7 +30,6 @@
                 <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false"
                     aria-controls="sidebarDashboards" class="side-nav-link">
                     <i class="uil-home-alt"></i>
-                    <span class="badge bg-success float-end">4</span>
                     <span> Dashboards </span>
                 </a>
                 <div class="collapse" id="sidebarDashboards">
@@ -94,10 +93,10 @@
                 <div class="collapse" id="sidebarMartRanking">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a routerLink="/customer-grade/customer-grade-list"> Danh sách các Hạng thẻ khách hàng</a>
+                            <a routerLink="/customer-grade/customer-grade-list" routerLinkActive="active"> Danh sách các Hạng thẻ khách hàng</a>
                         </li>
                         <li>
-                            <a> chi tiết hạng thẻ khách hàng</a>
+                            <a routerLink="/customer-grade/customer-grade-detail" routerLinkActive="active"> chi tiết hạng thẻ khách hàng</a>
                         </li>
                         <li>
                             <a> Tìm kiếm hạng thẻ khách hàng</a>
@@ -115,7 +114,7 @@
         </ul>
 
         <!-- Help Box -->
-        <app-help-box></app-help-box>
+        <!-- <app-help-box></app-help-box> -->
         <!-- end Help Box -->
 
         <!-- End Sidebar -->

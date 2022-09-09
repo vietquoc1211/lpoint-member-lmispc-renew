@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import { GradeService } from 'src/app/core/_services';
 import { NgxSpinnerService } from 'ngx-spinner';
-declare let $: any;
+import {MatPaginator, PageEvent} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
   selector: 'app-customer-grade-list',
@@ -10,36 +11,41 @@ declare let $: any;
 })
 export class CustomerGradeListComponent implements OnInit {
   DataGrade: any;
-  page = 0;
+  isLoading = false;
+  totalRows = 1000;
   pageSize = 10;
-  totalPages: number=0;
+  currentPage = 1;
+  pageSizeOptions: number[] = [10,25,50,100];
+  dataSource = new MatTableDataSource();
+  displayedColumns = ['stt','memberno', 'membernm', 'grade', 'revenue','startymd','endymd','usegbn','transcnt'];
+
+  @ViewChild(MatPaginator)
+  paginator!: MatPaginator;
+
+  ngAfterViewInit() {
+  }
 
   constructor( private gradeService: GradeService,
     private spinnerService: NgxSpinnerService
   ) { }
 
   ngOnInit() {
-
+    this.getData();
   }
-
+  
   async getData(){
     this.spinnerService.show();
     this.gradeService.getAll().subscribe(res =>{
       this.DataGrade = res;
+      this.dataSource = new MatTableDataSource(this.DataGrade);
+      this.dataSource.paginator = this.paginator;
       this.spinnerService.hide();
     })
   }
-
-  nextPage() {
-      this.page++;
-      this.getData();
-    }
-
-  previousPage() {
-    this.page--;
-    if (this.page === -1) {
-      this.page = this.totalPages - 1;
-    }
+  pageChanged(event: PageEvent) {
+    console.log({ event });
+    this.pageSize = event.pageSize;
+    this.currentPage = event.pageIndex;
     this.getData();
   }
 }

@@ -14,6 +14,11 @@ const routes: Routes = [
         "path": "customer-grade-list",
         "component": _grade.CustomerGradeListComponent,
         canActivate: [AuthGuard] 
+      },
+      {
+        "path": "customer-grade-detail",
+        "component": _grade.CustomerGradeDetailComponent,
+        canActivate: [AuthGuard] 
       }
     ]
   }

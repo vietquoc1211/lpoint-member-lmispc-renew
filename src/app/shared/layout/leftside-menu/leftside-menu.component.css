@@ -1,0 +1,15 @@
+.side-nav .side-nav-title {
+    padding: 12px 20px;
+}
+
+.side-nav .side-nav-link {
+    padding: 10px 20px;
+}
+
+.side-nav-forth-level li a, .side-nav-second-level li a, .side-nav-third-level li a {
+    padding: 5px 10px 5px 60px;
+}
+
+.active {
+    color: #fff!important;
+}
