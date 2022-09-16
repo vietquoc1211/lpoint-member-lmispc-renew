@@ -30,7 +30,7 @@ import * as shared from './index';
     ],
     imports: [
       CommonModule,
-      RouterModule,
+      RouterModule   
     ],
     providers: [
     ]

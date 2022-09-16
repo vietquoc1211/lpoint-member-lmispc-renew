@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   ) {
     //redirect to home if already logged in
     if (this.authenticationService.currentUserValue) {
-      this.router.navigate(['/analysis/mart']);
+      this.router.navigate(['/dashboards']);
     }
   }
 
@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
       .subscribe({
         next: () => {
           // get return url from route parameters or default to '/'
-          const returnUrl = this.route?.snapshot.queryParams['returnUrl'] || '/analysis/mart';
+          const returnUrl = this.route?.snapshot.queryParams['returnUrl'] || '/dashboards';
           this.router?.navigate([returnUrl]);
         },
         error: error => {
