@@ -11,16 +11,13 @@ const routes: Routes = [
     },
     "children": [
       {
-        "path": "grade-information",
-        "component": _grade.GradeInfomationComponent
+        "path": "grade-information", "component": _grade.GradeInfomationComponent,canActivate: [AuthGuard] 
       },
       {
-        "path": "grade-setting-accumulation",
-        "component": _grade.GradeSettingComponent
+        "path": "grade-setting-accumulation", "component": _grade.GradeSettingComponent, canActivate: [AuthGuard] 
       },
       {
-        "path" : "setting-rule-customer-grade",
-        "component" : _grade.SettingRuleCustomerGradeComponent
+        "path" : "setting-rule-customer-grade","component" : _grade.SettingRuleCustomerGradeComponent, canActivate: [AuthGuard] 
       }
     ]
   }
