@@ -20,6 +20,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/customer-grade/customer-grade.module').then((m) => m.CustomerGradeModule),
   },
   {
+    path: 'grade-management',
+    loadChildren: () => import('./pages/grade-management/grade-management.module').then((m) => m.GradeManagementModule),
+  },
+  {
     path: '',
     redirectTo: 'users/login',
     pathMatch: 'full'

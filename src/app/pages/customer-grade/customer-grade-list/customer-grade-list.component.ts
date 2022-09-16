@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import { GradeService } from 'src/app/core/_services';
+import { CustomerGradeService } from 'src/app/core/_services';
 import { NgxSpinnerService } from 'ngx-spinner';
 import {MatPaginator, PageEvent} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
@@ -17,7 +17,7 @@ export class CustomerGradeListComponent implements OnInit {
   currentPage = 1;
   pageSizeOptions: number[] = [10,25,50,100];
   dataSource = new MatTableDataSource();
-  displayedColumns = ['stt','memberno', 'membernm', 'grade', 'revenue','startymd','endymd','usegbn','transcnt'];
+  displayedColumns = ['stt','memberno', 'membernm', 'grade', 'point','startymd','endymd','usegbn','transcnt','action'];
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
@@ -25,7 +25,7 @@ export class CustomerGradeListComponent implements OnInit {
   ngAfterViewInit() {
   }
 
-  constructor( private gradeService: GradeService,
+  constructor( private customergradeService: CustomerGradeService,
     private spinnerService: NgxSpinnerService
   ) { }
 
@@ -35,7 +35,7 @@ export class CustomerGradeListComponent implements OnInit {
   
   async getData(){
     this.spinnerService.show();
-    this.gradeService.getAll().subscribe(res =>{
+    this.customergradeService.getAll().subscribe(res =>{
       this.DataGrade = res;
       this.dataSource = new MatTableDataSource(this.DataGrade);
       this.dataSource.paginator = this.paginator;

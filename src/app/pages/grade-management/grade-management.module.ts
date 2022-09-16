@@ -1,26 +1,27 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { CustomerGradeRoutingModule } from './customer-grade-routing.module';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { MaterialModule } from '../../shared/material.module';
-import * as _grade from './customer-grade.index';
+import { GradeManagementRoutingModule } from './grade-management-routing.module';
+import { GradeInfomationComponent, GradeSettingComponent, SettingRuleCustomerGradeComponent } from './grade-management.index';
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
-        CustomerGradeRoutingModule,
+        GradeManagementRoutingModule,
         NgxSpinnerModule,
         MaterialModule
     ], 
     declarations: 
     [
-        _grade.CustomerGradeListComponent,
-        _grade.CustomerGradeDetailComponent
+        GradeInfomationComponent,
+        GradeSettingComponent,
+        SettingRuleCustomerGradeComponent
     ],
     providers: [
     ]
 })
-export class CustomerGradeModule {
+export class GradeManagementModule {
 }

@@ -96,7 +96,7 @@
                             <a routerLink="/customer-grade/customer-grade-list" routerLinkActive="active"> Danh sách các Hạng thẻ khách hàng</a>
                         </li>
                         <li>
-                            <a routerLink="/customer-grade/customer-grade-detail" routerLinkActive="active"> chi tiết hạng thẻ khách hàng</a>
+                            <a routerLink="/customer-grade/customer-grade-detail" routerLinkActive="active"> Chi tiết hạng thẻ khách hàng</a>
                         </li>
                         <li>
                             <a> Tìm kiếm hạng thẻ khách hàng</a>
@@ -110,7 +110,26 @@
                     </ul>
                 </div>
             </li>
-
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#sidebargrademanagement" aria-expanded="false" aria-controls="sidebargrademanagement" class="side-nav-link">
+                    <i class="uil-bright"></i>
+                    <span>Quản Lý Hạng Thẻ</span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebargrademanagement">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a routerLink="/grade-management/grade-information" routerLinkActive="active"> Thông tin hạng thẻ</a>
+                        </li>
+                        <li>
+                            <a routerLink="/grade-management/grade-setting-accumulation" routerLinkActive="active"> Thiết lập quy tắc tích lũy điểm theo hạng thẻ</a>
+                        </li>
+                        <li>
+                            <a routerLink="/grade-management/setting-rule-customer-grade" routerLinkActive="active"> Cài đặt quy tắc tích lũy cho các hạng thẻ </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
         </ul>
 
         <!-- Help Box -->
