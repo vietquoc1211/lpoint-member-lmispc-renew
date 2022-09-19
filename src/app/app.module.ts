@@ -12,6 +12,7 @@ import { ErrorInterceptor, JwtInterceptor } from './core/_helpers';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ToastrModule } from 'ngx-toastr';
 import { MaterialModule } from './shared/material.module';
 @NgModule({
   declarations: [
@@ -29,7 +30,10 @@ import { MaterialModule } from './shared/material.module';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right'
+    }),
   ],
   entryComponents:[
   ],

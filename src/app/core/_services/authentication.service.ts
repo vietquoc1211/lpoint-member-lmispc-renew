@@ -1,17 +1,15 @@
 ﻿import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
 import { environment } from '../../../environments/environment';
 import { User } from '../_models/user';
-
+import { ApiService} from './api.service';
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
 
-  constructor(private http: HttpClient) {
+  constructor(private apiService: ApiService) {
     this.currentUserSubject = new BehaviorSubject<User>(
       JSON.parse(localStorage.getItem('currentUser')!)
     );
@@ -23,8 +21,8 @@ export class AuthenticationService {
   }
 
   login(username: string, password: string) {
-    return this.http
-      .post<any>(`${environment.apiUrl}/users/authenticate`, {
+    return this.apiService
+      .post("users/authenticate", {
         username,
         password,
       })

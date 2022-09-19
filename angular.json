@@ -32,7 +32,8 @@
             "styles": [
               "src/assets/css/icons.min.css",
               "src/assets/css/vendor/responsive.bootstrap5.css",
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": [
               "src/assets/js/vendor.min.js",
@@ -102,7 +103,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []
           }
