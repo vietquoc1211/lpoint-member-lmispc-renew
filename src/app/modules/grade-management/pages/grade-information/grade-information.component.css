@@ -26,6 +26,7 @@ table {
     font-size: 1.2rem;
     display: inline-block;
     padding: 0 3px;
+    cursor: pointer;
   }
   
   @media screen and (max-width: 600px) {

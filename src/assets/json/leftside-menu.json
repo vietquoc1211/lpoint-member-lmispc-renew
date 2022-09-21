@@ -1,0 +1,69 @@
+{
+    "dataMenu": [
+        {
+            "pageTitle": "Dashboards",
+            "routerLink": "/dashboards",
+            "icon": "uil-home-alt",
+            "id":"dashboards",
+            "subPages": []
+        },
+        {
+            "pageTitle": "Phân hạng khách hàng",
+            "routerLink" : "",
+            "icon": "uil-cell",
+            "id":"sideCustomergrade",
+            "subPages": 
+            [
+                {
+                    "pageTitle": "Danh sách các hạng thẻ khách hàng",
+                    "routerLink": "/customer-grade/customer-grade-list",
+                    "icon": ""
+                },
+                {
+                    "pageTitle": "Chi tiết hạng thẻ khách hàng",
+                    "routerLink": "/customer-grade/customer-grade-detail",
+                    "icon": ""
+                },
+                {
+                    "pageTitle": "Tìm kiếm hạng thẻ khách hàng",
+                    "routerLink": "/customer-grade/customer-grade-search",
+                    "icon": ""
+                },
+                {
+                    "pageTitle": "Chỉnh sửa hạng thẻ khách hàng",
+                    "routerLink": "/customer-grade/customer-grade-edit",
+                    "icon": ""
+                },
+                {
+                    "pageTitle": "Xuất dữ liệu theo hạng thẻ",
+                    "routerLink": "/customer-grade/export-grade-list",
+                    "icon": ""
+                }
+            ]
+        },
+        {
+            "pageTitle": "Quản Lý Hạng Thẻ",
+            "routerLink" : "",
+            "icon": "uil-bright",
+            "id":"sidebargrademanagement",
+            "subPages": 
+            [
+                {
+                    "pageTitle": "Thông tin hạng thẻ",
+                    "routerLink": "/grade-management/grade-information",
+                    "icon": ""
+                },
+                {
+                    "pageTitle": "Thiết lập quy tắc tích lũy điểm theo hạng thẻ",
+                    "routerLink": "/grade-management/grade-setting-accumulation",
+                    "icon": ""
+                },
+                {
+                    "pageTitle": "Tìm kiếm hạng thẻ khách hàng",
+                    "routerLink": "/grade-management/setting-rule-customer-grade",
+                    "icon": ""
+                }
+            ]
+        }
+    ]
+}
