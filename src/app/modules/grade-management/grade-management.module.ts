@@ -14,8 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         ReactiveFormsModule,
         GradeManagementRoutingModule,
         NgxSpinnerModule,
-        MaterialModule,
-        BrowserAnimationsModule
+        MaterialModule    
     ], 
     declarations: 
     [
