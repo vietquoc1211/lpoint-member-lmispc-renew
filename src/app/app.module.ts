@@ -9,7 +9,7 @@ import { Page500Component } from './modules/error/page500/page500.component';
 import { Page406Component } from './modules/error/page406/page406.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor, JwtInterceptor } from './core/_helpers';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ToastrModule } from 'ngx-toastr';
@@ -26,7 +26,6 @@ import { ToastrModule } from 'ngx-toastr';
     SharedModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({

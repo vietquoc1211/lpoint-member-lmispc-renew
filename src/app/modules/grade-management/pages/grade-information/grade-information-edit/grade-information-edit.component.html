@@ -1,10 +1,42 @@
-<div class="card">
-    <div class="card-header">
-      Featured
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">Special title treatment</h5>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
+<div class="modal-content">
+  <div class="modal-header modal-colored-header bg-info">
+      <h4 class="modal-title" id="info-header-modalLabel">Thông tin hạng thẻ khách hàng</h4>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" (click)="closeDialog()"></button>
   </div>
+  <div class="modal-body">
+    <form>
+      <div class="mb-3">
+          <label for="gradecd" class="form-label">Mã hạng thẻ</label>
+          <input class="form-control" id="gradecd" placeholder="Mã hạng thẻ" >
+      </div>
+      <div class="mb-3">
+          <label for="gradenm" class="form-label">Tên hạng thẻ</label>
+          <input class="form-control" id="gradenm" placeholder="Tên hạng thẻ">
+      </div>
+      <div class="mb-3">
+        <div class="form-check form-checkbox-success mb-2">
+            <input type="checkbox" class="form-check-input" id="customCheckcolor2" checked>
+            <label class="form-check-label" for="customCheckcolor2">Trạng Thái</label>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="fromcnt" class="form-label">Số lượt tích lũy từ</label>
+        <input class="form-control" id="fromcnt" placeholder="Số lượt tích lũy từ">
+      </div>
+      <div class="mb-3">
+        <label for="tocnt" class="form-label">Số lượt tích lũy đến</label>
+        <input class="form-control" id="tocnt" placeholder="Số lượt tích lũy đến">
+      </div>
+      <div class="mb-3">
+        <div class="form-check form-checkbox-success mb-2">
+          <input type="checkbox" class="form-check-input" id="ftpsend" checked>
+          <label class="form-check-label" for="ftpsend">Gửi FTP</label>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+      <button type="button" class="btn btn-light" data-bs-dismiss="modal" (click)="closeDialog()">Close</button>
+      <button type="button" class="btn btn-info">Save changes</button>
+  </div>
+</div><!-- /.modal-content -->

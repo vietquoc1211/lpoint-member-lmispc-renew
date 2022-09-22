@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import { CustomerGradeService } from 'src/app/core/_services';
+import { CustomerGradeService } from '../../services/customergrade.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import {MatPaginator, PageEvent} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
@@ -42,6 +42,7 @@ export class CustomerGradeListComponent implements OnInit {
       this.spinnerService.hide();
     })
   }
+
   pageChanged(event: PageEvent) {
     console.log({ event });
     this.pageSize = event.pageSize;

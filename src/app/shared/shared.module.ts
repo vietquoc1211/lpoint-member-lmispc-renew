@@ -38,7 +38,7 @@ import * as shared from './index';
     imports: [
       CommonModule,
       RouterModule,
-      MaterialModule 
+      MaterialModule
     ],
     providers: [
     ]

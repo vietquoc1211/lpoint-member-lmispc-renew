@@ -3,8 +3,6 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { GradeInfoService } from '../../services/gradeinfo.service';
-import { MatSort, Sort} from '@angular/material/sort';
-import { LiveAnnouncer} from '@angular/cdk/a11y';
 import { MatDialog } from '@angular/material/dialog';
 import { GradeInfomationEditComponent } from './grade-information-edit/grade-information-edit.component';
 import { ConfirmationDialog } from 'src/app/shared/component/confirmation-dialog/confirmation-dialog.component';
@@ -15,7 +13,7 @@ import { ConfirmationDialog } from 'src/app/shared/component/confirmation-dialog
     styleUrls: ['./grade-information.component.css']
 })
 export class GradeInfomationComponent {
-    DataGrade: any;
+    dataGrade: any;
     isLoading = false;
     totalRows = 1000;
     pageSize = 10;
@@ -26,12 +24,9 @@ export class GradeInfomationComponent {
   
     @ViewChild(MatPaginator)
     paginator!: MatPaginator;
-    @ViewChild(MatSort)
-    sort!: MatSort;
 
     constructor( private gradeinfoService: GradeInfoService,
         private spinnerService: NgxSpinnerService,
-        private _liveAnnouncer: LiveAnnouncer,
         public dialog: MatDialog
       ) { }
     
@@ -40,30 +35,34 @@ export class GradeInfomationComponent {
     }
       
     ngAfterViewInit() {
-      this.dataSource.sort = this.sort;
+
     }
     
     async getData(){
-        this.spinnerService.show();
-        this.gradeinfoService.getAll().subscribe(res =>{
-          this.DataGrade = res;
-          this.dataSource = new MatTableDataSource(this.DataGrade);
-          this.dataSource.paginator = this.paginator;
-          this.spinnerService.hide();
-        })
+      this.spinnerService.show();
+      this.gradeinfoService.getAll().subscribe(res =>{
+        this.dataGrade = res;
+        this.dataSource = new MatTableDataSource(this.dataGrade);
+        this.dataSource.paginator = this.paginator;
+        this.spinnerService.hide();
+      })
     }
 
     onView(element:any) {
       let dialogRef = this.dialog.open(GradeInfomationEditComponent, {
-        height: '400px',
+        data: element,
         width: '600px',
+        disableClose: true,
+        panelClass: 'custom-modalbox'
       });
     }
 
     onEdit(element:any) {
       let dialogRef = this.dialog.open(GradeInfomationEditComponent, {
-        height: '400px',
+        data: element,
         width: '600px',
+        disableClose: true,
+        panelClass: 'custom-modalbox'
       });
     }
 

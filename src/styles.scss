@@ -3171,3 +3171,9 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   margin: 0;
 }
+
+.custom-modalbox {
+  .mat-dialog-container {
+    padding: 0!important;
+  }
+}

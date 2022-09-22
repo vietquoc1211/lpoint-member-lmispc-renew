@@ -5,6 +5,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { MaterialModule } from '../../shared/material.module';
 import { GradeManagementRoutingModule } from './grade-management-routing.module';
 import { GradeInfomationComponent, GradeSettingComponent, SettingRuleCustomerGradeComponent } from './grade-management.index';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
     imports: [
         CommonModule,
@@ -12,7 +14,8 @@ import { GradeInfomationComponent, GradeSettingComponent, SettingRuleCustomerGra
         ReactiveFormsModule,
         GradeManagementRoutingModule,
         NgxSpinnerModule,
-        MaterialModule
+        MaterialModule,
+        BrowserAnimationsModule
     ], 
     declarations: 
     [
