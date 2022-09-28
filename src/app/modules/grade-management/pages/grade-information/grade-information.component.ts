@@ -50,7 +50,10 @@ export class GradeInfomationComponent {
 
     onView(element:any) {
       let dialogRef = this.dialog.open(GradeInfomationEditComponent, {
-        data: element,
+        data: {
+          data: element,
+          onEdit: false
+        },
         width: '600px',
         disableClose: true,
         panelClass: 'custom-modalbox'
@@ -59,7 +62,10 @@ export class GradeInfomationComponent {
 
     onEdit(element:any) {
       let dialogRef = this.dialog.open(GradeInfomationEditComponent, {
-        data: element,
+        data: {
+          data: element,
+          onEdit: true
+        },
         width: '600px',
         disableClose: true,
         panelClass: 'custom-modalbox'

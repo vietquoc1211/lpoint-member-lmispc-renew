@@ -40,7 +40,7 @@
                             <th mat-header-cell *matHeaderCellDef> Trạng thái </th>
                             <td mat-cell *matCellDef="let element">
                                 <div class="form-check form-checkbox-success mb-2">
-                                    <input type="checkbox" class="form-check-input" id="customCheckcolor2" checked>
+                                    <input type="checkbox" class="form-check-input" name="usegbn" checked [(ngModel)]="element.usegbn">
                                 </div>
                             </td>
                         </ng-container>
@@ -59,7 +59,11 @@
                         <!-- Symbol endymd -->
                         <ng-container matColumnDef="ftpsend">
                             <th mat-header-cell *matHeaderCellDef> gửi FTP </th>
-                            <td mat-cell *matCellDef="let element"> {{element.ftpsend}} </td>
+                            <td mat-cell *matCellDef="let element">
+                                <div class="form-check form-checkbox-success mb-2">
+                                    <input type="checkbox" class="form-check-input" name="ftpsend" checked [(ngModel)]="element.ftpsend">
+                                </div>
+                            </td>
                         </ng-container>
 
                          <!-- Symbol lastymd -->

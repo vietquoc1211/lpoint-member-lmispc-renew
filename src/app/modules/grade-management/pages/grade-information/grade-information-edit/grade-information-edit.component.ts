@@ -8,11 +8,12 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class GradeInfomationEditComponent {
     dataGrade: any;
-
+    onEdit: boolean = false;
     constructor(
         public dialogRef: MatDialogRef<any>,
         @Inject(MAT_DIALOG_DATA) public data: any) {
-            this.dataGrade = data;
+            this.dataGrade = data.data;
+            this.onEdit = data.onEdit;
     }
 
     closeDialog(){

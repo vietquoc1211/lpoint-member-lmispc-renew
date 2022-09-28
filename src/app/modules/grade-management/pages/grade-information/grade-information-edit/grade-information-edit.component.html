@@ -4,14 +4,46 @@
       <button type="button" class="btn-close" data-bs-dismiss="modal" (click)="closeDialog()"></button>
   </div>
   <div class="modal-body">
+    <!-- edit mode -->
+   <ng-container *ngIf="onEdit">
     <form>
       <div class="mb-3">
           <label for="gradecd" class="form-label">Mã hạng thẻ</label>
-          <input class="form-control" id="gradecd" placeholder="Mã hạng thẻ" >
+          <input class="form-control" name="gradecd" placeholder="Mã hạng thẻ" [(ngModel)]="dataGrade.gradecd" >
       </div>
       <div class="mb-3">
           <label for="gradenm" class="form-label">Tên hạng thẻ</label>
-          <input class="form-control" id="gradenm" placeholder="Tên hạng thẻ">
+          <input class="form-control" name="gradenm" placeholder="Tên hạng thẻ" [(ngModel)]="dataGrade.gradenm">
+      </div>
+      <div class="mb-3">
+        <div class="form-check form-checkbox-success mb-2">
+            <input type="checkbox" class="form-check-input" name="customCheckcolor2" checked [(ngModel)]="dataGrade.usegbn">
+            <label class="form-check-label" for="customCheckcolor2">Trạng Thái</label>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="fromcnt" class="form-label">Số lượt tích lũy từ</label>
+        <input class="form-control" name="fromcnt" placeholder="Số lượt tích lũy từ" [(ngModel)]="dataGrade.fromcnt">
+      </div>
+      <div class="mb-3">
+        <label for="tocnt" class="form-label">Số lượt tích lũy đến</label>
+        <input class="form-control" name="tocnt" placeholder="Số lượt tích lũy đến" [(ngModel)]="dataGrade.tocnt">
+      </div>
+      <div class="mb-3">
+        <div class="form-check form-checkbox-success mb-2">
+          <input type="checkbox" class="form-check-input" name="ftpsend" checked [(ngModel)]="dataGrade.ftpsend">
+          <label class="form-check-label" for="ftpsend">Gửi FTP</label>
+        </div>
+      </div>
+    </form>
+   </ng-container>
+   <!-- view mode -->
+   <ng-container *ngIf="!onEdit">
+      <div class="mb-3">
+          <label for="gradecd" class="form-label">Mã hạng thẻ</label>: {{dataGrade.gradecd}}
+      </div>
+      <div class="mb-3">
+          <label for="gradenm" class="form-label">Tên hạng thẻ</label> : {{dataGrade.gradenm}}
       </div>
       <div class="mb-3">
         <div class="form-check form-checkbox-success mb-2">
@@ -20,12 +52,10 @@
         </div>
       </div>
       <div class="mb-3">
-        <label for="fromcnt" class="form-label">Số lượt tích lũy từ</label>
-        <input class="form-control" id="fromcnt" placeholder="Số lượt tích lũy từ">
+        <label for="fromcnt" class="form-label">Số lượt tích lũy từ</label>: {{dataGrade.fromcnt}}
       </div>
       <div class="mb-3">
-        <label for="tocnt" class="form-label">Số lượt tích lũy đến</label>
-        <input class="form-control" id="tocnt" placeholder="Số lượt tích lũy đến">
+        <label for="tocnt" class="form-label">Số lượt tích lũy đến</label>: {{dataGrade.tocnt}}
       </div>
       <div class="mb-3">
         <div class="form-check form-checkbox-success mb-2">
@@ -33,10 +63,10 @@
           <label class="form-check-label" for="ftpsend">Gửi FTP</label>
         </div>
       </div>
-    </form>
+  </ng-container>
   </div>
   <div class="modal-footer">
       <button type="button" class="btn btn-light" data-bs-dismiss="modal" (click)="closeDialog()">Close</button>
-      <button type="button" class="btn btn-info">Save changes</button>
+      <button type="button" class="btn btn-info"  *ngIf="onEdit">Save changes</button>
   </div>
 </div><!-- /.modal-content -->
