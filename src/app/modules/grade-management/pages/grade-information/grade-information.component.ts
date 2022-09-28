@@ -47,24 +47,12 @@ export class GradeInfomationComponent {
         this.spinnerService.hide();
       })
     }
-
-    onView(element:any) {
+    
+    onShowDialogGrade(action: string, data: any) {
       let dialogRef = this.dialog.open(GradeInfomationEditComponent, {
         data: {
-          data: element,
-          onEdit: false
-        },
-        width: '600px',
-        disableClose: true,
-        panelClass: 'custom-modalbox'
-      });
-    }
-
-    onEdit(element:any) {
-      let dialogRef = this.dialog.open(GradeInfomationEditComponent, {
-        data: {
-          data: element,
-          onEdit: true
+          data: data,
+          action: action
         },
         width: '600px',
         disableClose: true,

@@ -1,6 +1,7 @@
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './core/_helpers';
 import { DashboardsComponent } from './modules/dashboards/dashboards.component';
 import { Page404AltComponent } from './modules/error/page404-alt/page404-alt.component';
 import { Page404Component } from './modules/error/page404/page404.component';
@@ -32,6 +33,7 @@ const routes: Routes = [
   {
     path: 'dashboards',
     component: DashboardsComponent,
+    canActivate: [AuthGuard]
   }, 
   {
       path: "page-404",
@@ -61,11 +63,11 @@ const routes: Routes = [
           title: 'Internal Server Error'
       }
     },
-    // {
-    //     "path": "**",
-    //     "redirectTo": "page-404",
-    //     "pathMatch": "full"
-    // },
+    {
+        "path": "**",
+        "redirectTo": "page-404",
+        "pathMatch": "full"
+    },
 ];
 
 @NgModule({

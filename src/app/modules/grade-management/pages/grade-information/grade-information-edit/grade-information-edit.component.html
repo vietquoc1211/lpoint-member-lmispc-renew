@@ -5,8 +5,7 @@
   </div>
   <div class="modal-body">
     <!-- edit mode -->
-   <ng-container *ngIf="onEdit">
-    <form>
+   <ng-container *ngIf="action!='view'">
       <div class="mb-3">
           <label for="gradecd" class="form-label">Mã hạng thẻ</label>
           <input class="form-control" name="gradecd" placeholder="Mã hạng thẻ" [(ngModel)]="dataGrade.gradecd" >
@@ -35,10 +34,9 @@
           <label class="form-check-label" for="ftpsend">Gửi FTP</label>
         </div>
       </div>
-    </form>
    </ng-container>
    <!-- view mode -->
-   <ng-container *ngIf="!onEdit">
+   <ng-container *ngIf="action=='view'">
       <div class="mb-3">
           <label for="gradecd" class="form-label">Mã hạng thẻ</label>: {{dataGrade.gradecd}}
       </div>
@@ -67,6 +65,6 @@
   </div>
   <div class="modal-footer">
       <button type="button" class="btn btn-light" data-bs-dismiss="modal" (click)="closeDialog()">Close</button>
-      <button type="button" class="btn btn-info"  *ngIf="onEdit">Save changes</button>
+      <button type="button" class="btn btn-info"  *ngIf="action!='view'" (click)="onSave()">Save changes</button>
   </div>
 </div><!-- /.modal-content -->
