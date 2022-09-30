@@ -61,7 +61,7 @@
                 {
                     "pageTitle": "Chiết xuất Data",
                     "routerLink": "",
-                    "icon": "uil-dropbox",
+                    "icon": "uil-export",
                     "id":"dataExport",
                     "subPages": [
                         {
@@ -87,6 +87,161 @@
                         {
                             "pageTitle": "Phân tích kết quả theo sự kiện",
                             "routerLink": "/data-export/export-grade-list",
+                            "icon": ""
+                        }
+                    ]
+                },
+                {
+                    "pageTitle": "Quản lý điểm",
+                    "routerLink": "",
+                    "icon": "uil-compress-point",
+                    "id":"PointManager",
+                    "subPages": [
+                        {
+                            "pageTitle": "Điều chỉnh điểm",
+                            "routerLink": "/customer-management/customer-grade-list",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Quản lí việc thanh toán bằng điểm",
+                            "routerLink": "/customer-management/customer-grade-detail",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Nạp/hủy điểm",
+                            "routerLink": "/customer-management/customer-grade-search",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Tình trạng điểm(khách hàng)",
+                            "routerLink": "/customer-management/customer-grade-edit",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Tình trạng điểm(đại lí)",
+                            "routerLink": "/customer-management/export-grade-list",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Thành tích bằng điểm của đại lí",
+                            "routerLink": "/customer-management/export-grade-list",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Tình trạng điểm của các đại lí",
+                            "routerLink": "/customer-management/export-grade-list",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Điểm dự kiến bị mất (khách hàng)",
+                            "routerLink": "/customer-management/export-grade-list",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Điểm dự kiến bị mất (từng tháng)",
+                            "routerLink": "/customer-management/export-grade-list",
+                            "icon": ""
+                        }
+                    ]
+                },
+                {
+                    "pageTitle": "Quản lý quà tặng",
+                    "routerLink": "",
+                    "icon": "uil-gift",
+                    "id":"GiftManagement",
+                    "subPages": [
+                        {
+                            "pageTitle": "Quản lý chủ thể tổ chức sự kiện",
+                            "routerLink": "/customer-management/customer-grade-list",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "danh mục quà tặng sự kiện",
+                            "routerLink": "/customer-management/customer-grade-detail",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Quà tặng",
+                            "routerLink": "/customer-management/customer-grade-search",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Quản lý nhập kho quà tặng",
+                            "routerLink": "/customer-management/customer-grade-edit",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Kiểm tra thành tích của các sự kiện quà tặng",
+                            "routerLink": "/customer-management/export-grade-list",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Kiểm tra thành tích theo sự kiện quà tặng đối tượng khách hàng",
+                            "routerLink": "/customer-management/export-grade-list",
+                            "icon": ""
+                        }
+                    ]
+                },
+                {
+                    "pageTitle": "SMS",
+                    "routerLink": "",
+                    "icon": "uil-comment-alt-message",
+                    "id":"SMS",
+                    "subPages": [
+                        {
+                            "pageTitle": "Gửi SMS",
+                            "routerLink": "/customer-management/customer-grade-list",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Gửi thư điện tử(email)",
+                            "routerLink": "/customer-management/customer-grade-detail",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Tình hình gửi SMS/EMS(đại lý)",
+                            "routerLink": "/customer-management/customer-grade-search",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Tình hình gửi SMS/EMS(khách hàng)",
+                            "routerLink": "/customer-management/customer-grade-edit",
+                            "icon": ""
+                        }
+                    ]
+                },
+                {
+                    "pageTitle": "VOC",
+                    "routerLink": "",
+                    "icon": "uil-wall",
+                    "id":"VOC",
+                    "subPages": [
+                        {
+                            "pageTitle": "Tình hình đăng kí và xử lí VOC",
+                            "routerLink": "/customer-management/customer-grade-list",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Kiểm tra kết quả xử lí VOC",
+                            "routerLink": "/customer-management/customer-grade-detail",
+                            "icon": ""
+                        }
+                    ]
+                },
+                {
+                    "pageTitle": "Đăng ký mục tiêu",
+                    "routerLink": "",
+                    "icon": "uil-screw",
+                    "id":"registerTagert",
+                    "subPages": [
+                        {
+                            "pageTitle": "đăng ký mục tiêu tháng",
+                            "routerLink": "/customer-management/customer-grade-list",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "đăng ký mục tiêu năm",
+                            "routerLink": "/customer-management/customer-grade-detail",
                             "icon": ""
                         }
                     ]
