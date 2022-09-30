@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import { MaterialModule } from '../../shared/material.module';
 import { GradeManagementRoutingModule } from './grade-management-routing.module';
 import * as _grade from './grade-management.index';
+import { SharedModule } from '../../shared/shared.module';
+import { MaterialModule } from '../../shared/material.module';
+
 @NgModule({
     imports: [
         CommonModule,
@@ -12,7 +14,8 @@ import * as _grade from './grade-management.index';
         ReactiveFormsModule,
         GradeManagementRoutingModule,
         NgxSpinnerModule,
-        MaterialModule    
+        SharedModule,
+        MaterialModule
     ], 
     declarations: 
     [

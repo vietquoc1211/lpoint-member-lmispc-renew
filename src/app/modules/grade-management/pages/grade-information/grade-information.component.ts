@@ -5,7 +5,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { GradeInfoService } from '../../services/gradeinfo.service';
 import { MatDialog } from '@angular/material/dialog';
 import { GradeInfomationEditComponent } from './grade-information-edit/grade-information-edit.component';
-import { ConfirmationDialog } from 'src/app/shared/component/confirmation-dialog/confirmation-dialog.component';
+import { ConfirmationDialogComponent } from '../../../../shared/component/confirmation-dialog/confirmation-dialog.component';
 
 @Component({
     selector: "grade-infomation",
@@ -61,7 +61,7 @@ export class GradeInfomationComponent {
     }
 
     onDelete(element: any): void {
-      const dialogRef = this.dialog.open(ConfirmationDialog,{
+      const dialogRef = this.dialog.open(ConfirmationDialogComponent,{
         data:{
           message: 'Are you sure want to delete?',
           buttonText: {

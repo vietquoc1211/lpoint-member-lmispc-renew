@@ -5,6 +5,8 @@ import { CustomerGradeRoutingModule } from './customer-grade-routing.module';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { MaterialModule } from '../../shared/material.module';
 import * as _grade from './customer-grade.index';
+import { SharedModule } from '../../shared/shared.module';
+
 @NgModule({
     imports: [
         CommonModule,
@@ -12,7 +14,8 @@ import * as _grade from './customer-grade.index';
         ReactiveFormsModule,
         CustomerGradeRoutingModule,
         NgxSpinnerModule,
-        MaterialModule
+        MaterialModule,
+        SharedModule
     ], 
     declarations: 
     [

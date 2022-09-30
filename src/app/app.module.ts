@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { SharedModule } from './shared/shared.module';
+import { LayoutModule } from './shared/layout/layout.module';
 import { AppRoutingModule } from "./app-routing.module";
 import { Page404Component } from './modules/error/page404/page404.component';
 import { Page404AltComponent } from './modules/error/page404-alt/page404-alt.component';
@@ -23,7 +23,7 @@ import { ToastrModule } from 'ngx-toastr';
   ],
   imports: [
     BrowserModule,
-    SharedModule,
+    LayoutModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,

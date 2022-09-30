@@ -14,8 +14,8 @@ const routes: Routes = [
     loadChildren: () => import('./modules/analysis/analysis.module').then((m) => m.AnalysisModule),
   },
   {
-    path: 'users',
-    loadChildren: () => import('./modules/users/users.module').then((m) => m.UsersModule),
+    path: 'authentication',
+    loadChildren: () => import('./modules/authentication/authentication.module').then((m) => m.AuthenticationModule),
   },
   {
     path: 'customer-grade',
@@ -27,7 +27,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'users/login',
+    redirectTo: 'authentication/login',
     pathMatch: 'full'
   }, 
   {

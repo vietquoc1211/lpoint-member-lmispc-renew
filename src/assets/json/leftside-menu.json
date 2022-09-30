@@ -1,67 +1,158 @@
 {
     "dataMenu": [
         {
-            "pageTitle": "Dashboards",
-            "routerLink": "/dashboards",
-            "icon": "uil-home-alt",
-            "id":"dashboards",
-            "subPages": []
-        },
-        {
-            "pageTitle": "Phân hạng khách hàng",
-            "routerLink" : "",
-            "icon": "uil-cell",
-            "id":"sideCustomergrade",
-            "subPages": 
-            [
+            "groupsTilte": "Dashboards",
+            "Pages": [
                 {
-                    "pageTitle": "Danh sách các hạng thẻ khách hàng",
-                    "routerLink": "/customer-grade/customer-grade-list",
-                    "icon": ""
-                },
-                {
-                    "pageTitle": "Chi tiết hạng thẻ khách hàng",
-                    "routerLink": "/customer-grade/customer-grade-detail",
-                    "icon": ""
-                },
-                {
-                    "pageTitle": "Tìm kiếm hạng thẻ khách hàng",
-                    "routerLink": "/customer-grade/customer-grade-search",
-                    "icon": ""
-                },
-                {
-                    "pageTitle": "Chỉnh sửa hạng thẻ khách hàng",
-                    "routerLink": "/customer-grade/customer-grade-edit",
-                    "icon": ""
-                },
-                {
-                    "pageTitle": "Xuất dữ liệu theo hạng thẻ",
-                    "routerLink": "/customer-grade/export-grade-list",
-                    "icon": ""
+                    "pageTitle": "Dashboards",
+                    "routerLink": "/dashboards",
+                    "icon": "uil-home-alt",
+                    "id":"dashboards",
+                    "subPages": []
                 }
             ]
         },
         {
-            "pageTitle": "Quản Lý Hạng Thẻ",
-            "routerLink" : "",
-            "icon": "uil-bright",
-            "id":"sidebargrademanagement",
-            "subPages": 
-            [
+            "groupsTilte": "Quản lý khách hàng",
+            "Pages": [
                 {
-                    "pageTitle": "Thông tin hạng thẻ",
-                    "routerLink": "/grade-management/grade-information",
-                    "icon": ""
+                    "pageTitle": "Quản lý khách hàng",
+                    "routerLink": "",
+                    "icon": "uil-user",
+                    "id":"customerManager",
+                    "subPages": [
+                        {
+                            "pageTitle": "Quản lý thông tin khách hàng",
+                            "routerLink": "/customer-grade/customer-grade-list",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Gia nhập hội viên vô danh",
+                            "routerLink": "/customer-grade/customer-grade-detail",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Kiểm tra khách hàng",
+                            "routerLink": "/customer-grade/customer-grade-search",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Quản lý hội viên ra khỏi hội",
+                            "routerLink": "/customer-grade/customer-grade-edit",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Quản lý phát hành thẻ Family",
+                            "routerLink": "/customer-grade/export-grade-list",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Quản lý Khách hàng mới (KOLA)",
+                            "routerLink": "/customer-grade/export-grade-list",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Tình trạng thẻ cinema VIP và U1222",
+                            "routerLink": "/customer-grade/export-grade-list",
+                            "icon": ""
+                        }
+                    ]
                 },
                 {
-                    "pageTitle": "Thiết lập quy tắc tích lũy điểm theo hạng thẻ",
-                    "routerLink": "/grade-management/grade-setting-accumulation",
-                    "icon": ""
+                    "pageTitle": "Chiết xuất Data",
+                    "routerLink": "",
+                    "icon": "uil-dropbox",
+                    "id":"dataExport",
+                    "subPages": [
+                        {
+                            "pageTitle": "Chiết xuất data khách hàng",
+                            "routerLink": "/customer-grade/customer-grade-list",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Chiết xuất data sản phẩm",
+                            "routerLink": "/customer-grade/customer-grade-detail",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Kiểm tra sự kiện",
+                            "routerLink": "/customer-grade/customer-grade-search",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Phân tích kết quả theo từng khách hàng",
+                            "routerLink": "/customer-grade/customer-grade-edit",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Phân tích kết quả theo sự kiện",
+                            "routerLink": "/customer-grade/export-grade-list",
+                            "icon": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "groupsTilte": "Quản lý hạng thẻ",
+            "Pages": [
+                {
+                    "pageTitle": "Phân hạng khách hàng",
+                    "routerLink" : "",
+                    "icon": "uil-cell",
+                    "id":"sideCustomergrade",
+                    "subPages": 
+                    [
+                        {
+                            "pageTitle": "Danh sách các hạng thẻ khách hàng",
+                            "routerLink": "/customer-grade/customer-grade-list",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Chi tiết hạng thẻ khách hàng",
+                            "routerLink": "/customer-grade/customer-grade-detail",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Tìm kiếm hạng thẻ khách hàng",
+                            "routerLink": "/customer-grade/customer-grade-search",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Chỉnh sửa hạng thẻ khách hàng",
+                            "routerLink": "/customer-grade/customer-grade-edit",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Xuất dữ liệu theo hạng thẻ",
+                            "routerLink": "/customer-grade/export-grade-list",
+                            "icon": ""
+                        }
+                    ]
                 },
                 {
-                    "pageTitle": "Tìm kiếm hạng thẻ khách hàng",
-                    "routerLink": "/grade-management/setting-rule-customer-grade",
-                    "icon": ""
+                    "pageTitle": "Quản Lý Hạng Thẻ",
+                    "routerLink" : "",
+                    "icon": "uil-bright",
+                    "id":"sidebargrademanagement",
+                    "subPages": 
+                    [
+                        {
+                            "pageTitle": "Thông tin hạng thẻ",
+                            "routerLink": "/grade-management/grade-information",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Thiết lập quy tắc tích lũy điểm theo hạng thẻ",
+                            "routerLink": "/grade-management/grade-setting-accumulation",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Tìm kiếm hạng thẻ khách hàng",
+                            "routerLink": "/grade-management/setting-rule-customer-grade",
+                            "icon": ""
+                        }
+                    ]
                 }
             ]
         }

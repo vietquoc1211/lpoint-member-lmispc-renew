@@ -5,13 +5,13 @@ import { MatDialogRef,MAT_DIALOG_DATA } from '@angular/material/dialog';
   selector: 'confirmation-dialog',
   templateUrl: './confirmation-dialog.component.html',
 })
-export class ConfirmationDialog {
+export class ConfirmationDialogComponent {
   message: string = "Are you sure?"
   confirmButtonText = "Yes"
   cancelButtonText = "Cancel"
   constructor(
     @Inject(MAT_DIALOG_DATA) private data: any,
-    private dialogRef: MatDialogRef<ConfirmationDialog>) {
+    private dialogRef: MatDialogRef<ConfirmationDialogComponent>) {
       if(data)
       {
             this.message = data.message || this.message;

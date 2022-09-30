@@ -15,6 +15,6 @@ export class AccountUserComponent implements OnInit {
 
   logout() {
     this.authenticationService.logout();
-    this.router.navigate(['/users/login']);
+    this.router.navigate(['/authentication/logout']);
   }
 }

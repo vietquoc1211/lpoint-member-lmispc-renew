@@ -23,27 +23,31 @@
     <div class="h-100" id="leftside-menu-container" data-simplebar="" #asideMenu>
         <!--- Sidemenu -->
         <ul class="side-nav">
-            <li class="side-nav-title side-nav-item">Navigation</li>
             <!-- load dynamic menu -->
-            <ng-container *ngFor="let menu of dataMenu;let i = index">
-                <li class="side-nav-item">
-                    <a *ngIf="!menu.routerLink" data-bs-toggle="collapse" href="#{{menu.id}}" aria-expanded="false" class="side-nav-link">
-                        <i class="{{menu.icon}}"></i>
-                        <span>{{menu.pageTitle}}</span>
-                        <span class="menu-arrow"></span>
-                    </a>
-                    <a *ngIf="menu.routerLink" data-bs-toggle="collapse" href="#{{menu.id}}" aria-expanded="false" class="side-nav-link" routerLink="{{menu.routerLink}}">
-                        <i class="{{menu.icon}}"></i>
-                        <span>{{menu.pageTitle}}</span>
-                    </a>
-                    <div class="collapse" id="{{menu.id}}">
-                        <ul class="side-nav-second-level" *ngFor="let subMenu of menu.subPages; let isub = index">
-                            <li>
-                                <a routerLink="{{subMenu.routerLink}}" routerLinkActive="active"> {{subMenu.pageTitle}}</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+            <ng-container *ngFor="let data of dataMenu;let i = index">
+                <!-- Groups tilte -->
+                <li class="side-nav-title side-nav-item">{{data.groupsTilte}}</li>
+                <ng-container *ngFor="let menu of data.Pages;let i = index">
+                    <!-- Pages Level 1 -->
+                    <li class="side-nav-item">
+                        <a *ngIf="!menu.routerLink" data-bs-toggle="collapse" href="#{{menu.id}}" aria-expanded="false" class="side-nav-link">
+                            <i class="{{menu.icon}}"></i>
+                            <span>{{menu.pageTitle}}</span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <a *ngIf="menu.routerLink" data-bs-toggle="collapse" href="#{{menu.id}}" aria-expanded="false" class="side-nav-link" routerLink="{{menu.routerLink}}">
+                            <i class="{{menu.icon}}"></i>
+                            <span>{{menu.pageTitle}}</span>
+                        </a>
+                        <div class="collapse" id="{{menu.id}}">
+                            <ul class="side-nav-second-level" *ngFor="let subMenu of menu.subPages; let isub = index">
+                                <li>
+                                    <a routerLink="{{subMenu.routerLink}}" routerLinkActive="active"> {{subMenu.pageTitle}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ng-container>    
             </ng-container>
         </ul>
 
