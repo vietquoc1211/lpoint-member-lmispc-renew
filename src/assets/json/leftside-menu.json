@@ -23,37 +23,37 @@
                     "subPages": [
                         {
                             "pageTitle": "Quản lý thông tin khách hàng",
-                            "routerLink": "/customer-grade/customer-grade-list",
+                            "routerLink": "/customer-management/customer-grade-list",
                             "icon": ""
                         },
                         {
                             "pageTitle": "Gia nhập hội viên vô danh",
-                            "routerLink": "/customer-grade/customer-grade-detail",
+                            "routerLink": "/customer-management/customer-grade-detail",
                             "icon": ""
                         },
                         {
                             "pageTitle": "Kiểm tra khách hàng",
-                            "routerLink": "/customer-grade/customer-grade-search",
+                            "routerLink": "/customer-management/customer-grade-search",
                             "icon": ""
                         },
                         {
                             "pageTitle": "Quản lý hội viên ra khỏi hội",
-                            "routerLink": "/customer-grade/customer-grade-edit",
+                            "routerLink": "/customer-management/customer-grade-edit",
                             "icon": ""
                         },
                         {
                             "pageTitle": "Quản lý phát hành thẻ Family",
-                            "routerLink": "/customer-grade/export-grade-list",
+                            "routerLink": "/customer-management/export-grade-list",
                             "icon": ""
                         },
                         {
                             "pageTitle": "Quản lý Khách hàng mới (KOLA)",
-                            "routerLink": "/customer-grade/export-grade-list",
+                            "routerLink": "/customer-management/export-grade-list",
                             "icon": ""
                         },
                         {
                             "pageTitle": "Tình trạng thẻ cinema VIP và U1222",
-                            "routerLink": "/customer-grade/export-grade-list",
+                            "routerLink": "/customer-management/export-grade-list",
                             "icon": ""
                         }
                     ]
@@ -66,27 +66,27 @@
                     "subPages": [
                         {
                             "pageTitle": "Chiết xuất data khách hàng",
-                            "routerLink": "/customer-grade/customer-grade-list",
+                            "routerLink": "/data-export/customer-grade-list",
                             "icon": ""
                         },
                         {
                             "pageTitle": "Chiết xuất data sản phẩm",
-                            "routerLink": "/customer-grade/customer-grade-detail",
+                            "routerLink": "/data-export/customer-grade-detail",
                             "icon": ""
                         },
                         {
                             "pageTitle": "Kiểm tra sự kiện",
-                            "routerLink": "/customer-grade/customer-grade-search",
+                            "routerLink": "/data-export/customer-grade-search",
                             "icon": ""
                         },
                         {
                             "pageTitle": "Phân tích kết quả theo từng khách hàng",
-                            "routerLink": "/customer-grade/customer-grade-edit",
+                            "routerLink": "/data-export/customer-grade-edit",
                             "icon": ""
                         },
                         {
                             "pageTitle": "Phân tích kết quả theo sự kiện",
-                            "routerLink": "/customer-grade/export-grade-list",
+                            "routerLink": "/data-export/export-grade-list",
                             "icon": ""
                         }
                     ]
@@ -105,27 +105,27 @@
                     [
                         {
                             "pageTitle": "Danh sách các hạng thẻ khách hàng",
-                            "routerLink": "/customer-grade/customer-grade-list",
+                            "routerLink": "/grade-management/customer-grade-list",
                             "icon": ""
                         },
                         {
                             "pageTitle": "Chi tiết hạng thẻ khách hàng",
-                            "routerLink": "/customer-grade/customer-grade-detail",
+                            "routerLink": "/grade-management/customer-grade-detail",
                             "icon": ""
                         },
                         {
                             "pageTitle": "Tìm kiếm hạng thẻ khách hàng",
-                            "routerLink": "/customer-grade/customer-grade-search",
+                            "routerLink": "/grade-management/customer-grade-search",
                             "icon": ""
                         },
                         {
                             "pageTitle": "Chỉnh sửa hạng thẻ khách hàng",
-                            "routerLink": "/customer-grade/customer-grade-edit",
+                            "routerLink": "/grade-management/customer-grade-edit",
                             "icon": ""
                         },
                         {
                             "pageTitle": "Xuất dữ liệu theo hạng thẻ",
-                            "routerLink": "/customer-grade/export-grade-list",
+                            "routerLink": "/grade-management/export-grade-list",
                             "icon": ""
                         }
                     ]

@@ -19,6 +19,11 @@ import { MaterialModule } from '../../shared/material.module';
     ], 
     declarations: 
     [
+        // custumer grade
+        _grade.CustomerGradeListComponent,
+        _grade.CustomerGradeDetailComponent,
+
+        // grade management
         _grade.GradeInfomationComponent,
         _grade.GradeInfomationEditComponent,
         _grade.GradeSettingComponent,

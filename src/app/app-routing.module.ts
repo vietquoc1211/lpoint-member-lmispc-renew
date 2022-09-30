@@ -18,10 +18,6 @@ const routes: Routes = [
     loadChildren: () => import('./modules/authentication/authentication.module').then((m) => m.AuthenticationModule),
   },
   {
-    path: 'customer-grade',
-    loadChildren: () => import('./modules/customer-grade/customer-grade.module').then((m) => m.CustomerGradeModule),
-  },
-  {
     path: 'grade-management',
     loadChildren: () => import('./modules/grade-management/grade-management.module').then((m) => m.GradeManagementModule),
   },

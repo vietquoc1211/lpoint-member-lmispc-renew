@@ -10,6 +10,14 @@ const routes: Routes = [
       title: 'Quản lý hạng thẻ'
     },
     "children": [
+      // Custumer grade
+      {
+        "path": "customer-grade-list", "component": _grade.CustomerGradeListComponent, canActivate: [AuthGuard] 
+      },
+      {
+        "path": "customer-grade-detail","component": _grade.CustomerGradeDetailComponent,canActivate: [AuthGuard] 
+      },
+      // Grade management
       {
         "path": "grade-information", "component": _grade.GradeInfomationComponent,canActivate: [AuthGuard] 
       },
