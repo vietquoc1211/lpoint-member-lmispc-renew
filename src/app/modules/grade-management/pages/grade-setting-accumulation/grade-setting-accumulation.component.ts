@@ -6,12 +6,13 @@ import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from '../../../../shared/component/confirmation-dialog/confirmation-dialog.component';
 import { SettingRuleCustomerGradeService } from "../../services/setting-rule-customer-grade.service";
 
-@Component({
-    selector: "setting-rule-customer-grade",
-    templateUrl: './setting-rule-customer-grade.component.html',
-    styleUrls: ['setting-rule-customer-grade.component.css']
+@Component ({
+    selector: "grade-setting-accumulation",
+    templateUrl: './grade-setting-accumulation.component.html',
+    styleUrls: ['./grade-setting-accumulation.component.css']
 })
-export class SettingRuleCustomerGradeComponent {
+
+export class GradeSettingAccumulationComponent {
     dataGrade: any;
     isLoading = false;
     totalRows = 1000;

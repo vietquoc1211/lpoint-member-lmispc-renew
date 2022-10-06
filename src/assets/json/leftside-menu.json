@@ -303,7 +303,7 @@
                             "icon": ""
                         },
                         {
-                            "pageTitle": "Tìm kiếm hạng thẻ khách hàng",
+                            "pageTitle": "Cài đặt quy tắc tích lũy cho các hạng thẻ",
                             "routerLink": "/grade-management/setting-rule-customer-grade",
                             "icon": ""
                         }

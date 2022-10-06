@@ -22,7 +22,7 @@ const routes: Routes = [
         "path": "grade-information", "component": _grade.GradeInfomationComponent,canActivate: [AuthGuard] 
       },
       {
-        "path": "grade-setting-accumulation", "component": _grade.GradeSettingComponent, canActivate: [AuthGuard] 
+        "path": "grade-setting-accumulation", "component": _grade.GradeSettingAccumulationComponent, canActivate: [AuthGuard] 
       },
       {
         "path" : "setting-rule-customer-grade","component" : _grade.SettingRuleCustomerGradeComponent, canActivate: [AuthGuard] 
