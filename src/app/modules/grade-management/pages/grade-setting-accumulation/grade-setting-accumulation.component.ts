@@ -4,7 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from '../../../../shared/component/confirmation-dialog/confirmation-dialog.component';
-import { SettingRuleCustomerGradeService } from "../../services/setting-rule-customer-grade.service";
+import { GradeSettingAccumulationService } from '../../services/grade-setting-accumulation.service';
 
 @Component ({
     selector: "grade-setting-accumulation",
@@ -20,11 +20,11 @@ export class GradeSettingAccumulationComponent {
     currentPage = 1;
     pageSizeOptions: number[] = [10,25,50,100];
     dataSource = new MatTableDataSource();
-    displayedColumns = ['stt','asscd', 'startymd', 'endymd','baseamount','cycle','period','setupday','lastsetup','action'];
+    displayedColumns = ['stt','asscd', 'gradecd', 'savetype','amount','yearreward','insymd','inssabun','lastymd','action'];
     @ViewChild(MatPaginator)
     paginator!: MatPaginator;
 
-    constructor(private settingRuleService: SettingRuleCustomerGradeService,
+    constructor(private _gradeSettingService: GradeSettingAccumulationService,
         private spinnerService: NgxSpinnerService,
         public dialog: MatDialog
       ) { }
@@ -39,7 +39,7 @@ export class GradeSettingAccumulationComponent {
     
     async getData(){
       this.spinnerService.show();
-      this.settingRuleService.getAll().subscribe(res =>{
+      this._gradeSettingService.getAll().subscribe(res =>{
         this.dataGrade = res;
         this.dataSource = new MatTableDataSource(this.dataGrade);
         this.dataSource.paginator = this.paginator;

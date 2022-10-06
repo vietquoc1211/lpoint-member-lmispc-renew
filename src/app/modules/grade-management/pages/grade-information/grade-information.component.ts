@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { GradeInfoService } from '../../services/gradeinfo.service';
+import { GradeInfoService } from '../../services/grade-information.service';
 import { MatDialog } from '@angular/material/dialog';
 import { GradeInfomationEditComponent } from './grade-information-edit/grade-information-edit.component';
 import { ConfirmationDialogComponent } from '../../../../shared/component/confirmation-dialog/confirmation-dialog.component';

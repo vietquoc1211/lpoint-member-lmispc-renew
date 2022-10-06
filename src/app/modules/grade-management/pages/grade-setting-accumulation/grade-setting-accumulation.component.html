@@ -30,46 +30,53 @@
                       <td mat-cell *matCellDef="let element"> {{element.asscd}} </td>
                   </ng-container>
   
-                  <!-- startymd Column -->
-                  <ng-container matColumnDef="startymd">
-                      <th mat-header-cell *matHeaderCellDef> Ngày bắt đầu </th>
-                      <td mat-cell *matCellDef="let element"> {{element.startymd}} </td>
+                  <!-- Gradecd Column -->
+                  <ng-container matColumnDef="gradecd">
+                      <th mat-header-cell *matHeaderCellDef> gradecd </th>
+                      <td mat-cell *matCellDef="let element"> {{element.gradecd}} </td>
                   </ng-container>
   
-                  <!-- endymd Column -->
-                  <ng-container matColumnDef="endymd">
-                      <th mat-header-cell *matHeaderCellDef> Ngày kết thúc </th>
-                      <td mat-cell *matCellDef="let element"> {{element.endymd}} </td>
+                  <!-- savetype Column -->
+                  <ng-container matColumnDef="savetype">
+                      <th mat-header-cell *matHeaderCellDef> savetype </th>
+                      <td mat-cell *matCellDef="let element"> {{element.savetype}} </td>
                   </ng-container>
 
-                  <!-- baseamount Column -->
-                  <ng-container matColumnDef="baseamount">
-                      <th mat-header-cell *matHeaderCellDef> base amount </th>
-                      <td mat-cell *matCellDef="let element"> {{element.baseamount }} </td>
+                  <!-- rate Column -->
+                  <ng-container matColumnDef="rate">
+                      <th mat-header-cell *matHeaderCellDef>  rate </th>
+                      <td mat-cell *matCellDef="let element"> {{element.rate }} </td>
                   </ng-container>
   
-                  <!-- cycle Column -->
-                  <ng-container matColumnDef="cycle">
-                      <th mat-header-cell *matHeaderCellDef> cycle </th>
-                      <td mat-cell *matCellDef="let element"> {{element.cycle}} </td>
+                  <!-- amount Column -->
+                  <ng-container matColumnDef="amount">
+                      <th mat-header-cell *matHeaderCellDef> amount </th>
+                      <td mat-cell *matCellDef="let element"> {{element.amount}} </td>
                   </ng-container>
   
-                  <!-- period endymd -->
-                  <ng-container matColumnDef="period">
-                      <th mat-header-cell *matHeaderCellDef> gửi FTP </th>
-                      <td mat-cell *matCellDef="let element"> {{element.period}} </td>
+                  <!-- yearreward endymd -->
+                  <ng-container matColumnDef="yearreward">
+                      <th mat-header-cell *matHeaderCellDef> yearreward </th>
+                      <td mat-cell *matCellDef="let element"> {{element.yearreward}} </td>
                   </ng-container>
 
-                   <!-- setupday lastymd -->
-                  <ng-container matColumnDef="setupday">
-                      <th mat-header-cell *matHeaderCellDef> Ngày cài đặt </th>
-                      <td mat-cell *matCellDef="let element"> {{element.setupday}} </td>
+                   <!-- insymd lastymd -->
+                  <ng-container matColumnDef="insymd">
+                      <th mat-header-cell *matHeaderCellDef> insymd </th>
+                      <td mat-cell *matCellDef="let element"> {{element.insymd}} </td>
                   </ng-container>
 
-                  <!-- lastsetup lastsabun -->
-                  <ng-container matColumnDef="lastsetup">
-                      <th mat-header-cell *matHeaderCellDef> Ngày cài đặt cuối</th>
-                      <td mat-cell *matCellDef="let element"> {{element.lastsetup}} </td>
+                  <!-- inssabun lastsabun -->
+                  <ng-container matColumnDef="inssabun">
+                      <th mat-header-cell *matHeaderCellDef> inssabun</th>
+                      <td mat-cell *matCellDef="let element"> {{element.inssabun}} </td>
+                  </ng-container>
+
+                  
+                  <!-- lastymd lastsabun -->
+                  <ng-container matColumnDef="lastymd">
+                    <th mat-header-cell *matHeaderCellDef> lastymd</th>
+                    <td mat-cell *matCellDef="let element"> {{element.lastymd}} </td>
                   </ng-container>
 
                   <!-- Action Column -->
