@@ -5,6 +5,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from '../../../../shared/component/confirmation-dialog/confirmation-dialog.component';
 import { SettingRuleCustomerGradeService } from "../../services/setting-rule-customer-grade.service";
+import { SettingRuleCustomerGradeEditComponent } from './setting-rule-customer-grade-edit/setting-rule-customer-grade-edit.component';
 
 @Component({
     selector: "setting-rule-customer-grade",
@@ -46,8 +47,16 @@ export class SettingRuleCustomerGradeComponent {
       })
     }
     
-    onShowDialogGrade(action: string, data: any) {
-      
+    onShowDialogSetting(action: string, data: any) {
+      let dialogRef = this.dialog.open(SettingRuleCustomerGradeEditComponent, {
+        data: {
+          data: data,
+          action: action
+        },
+        width: '600px',
+        disableClose: true,
+        panelClass: 'custom-modalbox'
+      });
     }
 
     onDelete(element: any): void {

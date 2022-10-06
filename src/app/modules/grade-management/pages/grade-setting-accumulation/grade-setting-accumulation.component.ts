@@ -5,6 +5,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from '../../../../shared/component/confirmation-dialog/confirmation-dialog.component';
 import { GradeSettingAccumulationService } from '../../services/grade-setting-accumulation.service';
+import { GradeSettingAccumulationEditComponent } from './grade-setting-accumulation-edit/grade-setting-accumulation-edit.component';
 
 @Component ({
     selector: "grade-setting-accumulation",
@@ -27,7 +28,9 @@ export class GradeSettingAccumulationComponent {
     constructor(private _gradeSettingService: GradeSettingAccumulationService,
         private spinnerService: NgxSpinnerService,
         public dialog: MatDialog
-      ) { }
+      ) { 
+
+    }
     
     ngOnInit() {
         this.getData();
@@ -47,8 +50,16 @@ export class GradeSettingAccumulationComponent {
       })
     }
     
-    onShowDialogGrade(action: string, data: any) {
-      
+    onShowDialogGradeSetting(action: string, data: any) {
+      let dialogRef = this.dialog.open(GradeSettingAccumulationEditComponent, {
+        data: {
+          data: data,
+          action: action
+        },
+        width: '600px',
+        disableClose: true,
+        panelClass: 'custom-modalbox'
+      });
     }
 
     onDelete(element: any): void {

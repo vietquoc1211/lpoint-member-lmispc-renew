@@ -1,0 +1,66 @@
+<div class="modal-content">
+  <div class="modal-header modal-colored-header bg-info">
+    <h4 class="modal-title" id="info-header-modalLabel">Thông tin hạng thẻ khách hàng</h4>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" (click)="closeDialog()"></button>
+  </div>
+  <div class="modal-body">
+    <!-- edit mode -->
+    <ng-container *ngIf="action!='view'">
+      <div class="mb-3">
+        <label for="asscd" class="form-label">asscd</label>
+        <input class="form-control" name="asscd" placeholder="asscd" [(ngModel)]="dataGrade.asscd">
+      </div>
+      <div class="mb-3">
+        <label for="asscd" class="form-label">asscd</label>
+        <input class="form-control" name="asscd" placeholder="asscd" [(ngModel)]="dataGrade.asscd">
+      </div>
+      <div class="mb-3">
+        <label for="startymd" class="form-label">startymd</label>
+        <input class="form-control" name="startymd" placeholder="startymd" [(ngModel)]="dataGrade.startymd">
+      </div>
+      <div class="mb-3">
+        <label for="cycle" class="form-label">cycle</label>
+        <input class="form-control" name="cycle" placeholder="cycle" [(ngModel)]="dataGrade.cycle">
+      </div>
+      <div class="mb-3">
+        <label for="period" class="form-label">period</label>
+        <input class="form-control" name="period" placeholder="period" [(ngModel)]="dataGrade.period">
+      </div>
+      <div class="mb-3">
+        <label for="setupday" class="form-label">setupday</label>
+        <input class="form-control" name="setupday" placeholder="setupday" [(ngModel)]="dataGrade.setupday">
+      </div>
+    </ng-container>
+    <!-- view mode -->
+    <ng-container *ngIf="action=='view'">
+      <div class="mb-3">
+        <label for="asscd" class="form-label">asscd</label>: {{dataGrade.asscd}}
+      </div>
+      <div class="mb-3">
+        <label for="startymd" class="form-label">startymd</label>: {{dataGrade.startymd}}
+      </div>
+      <div class="mb-3">
+        <label for="endymd" class="form-label">endymd</label>: {{dataGrade.endymd}}
+      </div>
+      <div class="mb-3">
+        <label for="baseamount" class="form-label">baseamount</label>: {{dataGrade.baseamount}}
+      </div>
+      <div class="mb-3">
+        <label for="cycle" class="form-label">cycle</label>: {{dataGrade.cycle}}
+      </div>
+      <div class="mb-3">
+        <label for="period" class="form-label">period</label>: {{dataGrade.period}}
+      </div>
+      <div class="mb-3">
+        <label for="setupday" class="form-label">setupday</label>: {{dataGrade.setupday}}
+      </div>
+      <div class="mb-3">
+        <label for="lastsetup" class="form-label">lastsetup</label>: {{dataGrade.lastsetup}}
+      </div>
+    </ng-container>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" data-bs-dismiss="modal" (click)="closeDialog()">Close</button>
+    <button type="button" class="btn btn-info" *ngIf="action!='view'" (click)="onSave()">Save changes</button>
+  </div>
+</div><!-- /.modal-content -->

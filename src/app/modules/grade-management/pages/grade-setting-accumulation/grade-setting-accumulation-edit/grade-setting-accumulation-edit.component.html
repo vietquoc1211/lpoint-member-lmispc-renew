@@ -1,0 +1,60 @@
+<div class="modal-content">
+  <div class="modal-header modal-colored-header bg-info">
+      <h4 class="modal-title" id="info-header-modalLabel">Thông tin hạng thẻ khách hàng</h4>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" (click)="closeDialog()"></button>
+  </div>
+  <div class="modal-body">
+    <!-- edit mode -->
+   <ng-container *ngIf="action!='view'">
+      <div class="mb-3">
+          <label for="gradecd" class="form-label">Đơn vị liên kết</label>
+          <input class="form-control" name="gradecd" placeholder="Mã hạng thẻ" [(ngModel)]="dataSetting.asscd" >
+      </div>
+      <div class="mb-3">
+          <label for="gradenm" class="form-label">Tên hạng thẻ</label>
+          <input class="form-control" name="gradenm" placeholder="Tên hạng thẻ" [(ngModel)]="dataSetting.gradecd">
+      </div>
+      <div class="mb-3">
+        <label for="gradenm" class="form-label">savetype</label>
+        <input class="form-control" name="savetype" placeholder="Tên hạng thẻ" [(ngModel)]="dataSetting.savetype">
+      </div>
+      <div class="mb-3">
+        <label for="Rate" class="form-label">Rate</label>
+        <input class="form-control" name="Rate" placeholder="Rate" [(ngModel)]="dataSetting.rate">
+      </div>
+      <div class="mb-3">
+        <label for="amount" class="form-label">amount</label>
+        <input class="form-control" name="amount" placeholder="amount" [(ngModel)]="dataSetting.amount">
+      </div>
+      <div class="mb-3">
+        <label for="insymd" class="form-label">insymd</label>
+        <input class="form-control" name="insymd" placeholder="insymd" [(ngModel)]="dataSetting.insymd">
+      </div>
+   </ng-container>
+   <!-- view mode -->
+   <ng-container *ngIf="action=='view'">
+      <div class="mb-3">
+          <label for="gradecd" class="form-label">Đơn vị liên kết</label>: {{dataSetting.asscd}}
+      </div>
+      <div class="mb-3">
+          <label for="gradenm" class="form-label">Tên hạng thẻ</label> : {{dataSetting.gradecd}}
+      </div>
+      <div class="mb-3">
+        <label for="gradenm" class="form-label">savetype</label> : {{dataSetting.savetype}}
+      </div>
+      <div class="mb-3">
+        <label for="fromcnt" class="form-label">rate</label>: {{dataSetting.rate}}
+      </div>
+      <div class="mb-3">
+        <label for="tocnt" class="form-label">amount</label>: {{dataSetting.amount}}
+      </div>
+      <div class="mb-3">
+        <label for="tocnt" class="form-label">insymd</label>: {{dataSetting.insymd}}
+      </div>
+  </ng-container>
+  </div>
+  <div class="modal-footer">
+      <button type="button" class="btn btn-light" data-bs-dismiss="modal" (click)="closeDialog()">Close</button>
+      <button type="button" class="btn btn-info"  *ngIf="action!='view'" (click)="onSave()">Save changes</button>
+  </div>
+</div><!-- /.modal-content -->

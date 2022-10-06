@@ -25,7 +25,9 @@ import { MaterialModule } from '../../shared/material.module';
         _grade.GradeInfomationComponent,
         _grade.GradeInfomationEditComponent,
         _grade.GradeSettingAccumulationComponent,
-        _grade.SettingRuleCustomerGradeComponent
+        _grade.GradeSettingAccumulationEditComponent,
+        _grade.SettingRuleCustomerGradeComponent,
+        _grade.SettingRuleCustomerGradeEditComponent
     ],
     providers: [
     ]

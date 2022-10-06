@@ -1,14 +1,14 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { GradeInfo } from '../../../models/grade-information.model';
+import { SettingRuleCustomerGrade } from '../../../models/setting-rule-customer-grade.model';
 
 @Component({
-    selector: "grade-infomation",
-    templateUrl:'./grade-information-edit.component.html',
-    styleUrls: ['./grade-information-edit.component.css']
+    selector: "setting-rule-customer-grade",
+    templateUrl:'./setting-rule-customer-grade-edit.component.html',
+    styleUrls: ['./setting-rule-customer-grade-edit.component.css']
 })
-export class GradeInfomationEditComponent {
-    dataGrade: GradeInfo = new GradeInfo();
+export class SettingRuleCustomerGradeEditComponent {
+    dataGrade: SettingRuleCustomerGrade = new SettingRuleCustomerGrade();
     action: string = 'view';
     constructor(
         public dialogRef: MatDialogRef<any>,
