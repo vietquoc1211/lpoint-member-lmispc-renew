@@ -16,7 +16,7 @@
                     </div><!-- end col-->
                 </div>
                 <!-- Content -->
-                <div class="table-responsive tab-pane">
+                <div class="table-responsive tab-pane content-grade-list">
                     <table mat-table class="table-striped" [dataSource]="dataSource">
                         <!-- Position Column -->
                         <ng-container matColumnDef="stt">
@@ -88,15 +88,12 @@
                         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                     </table>
                 </div> <!-- end preview-->
-                <mat-paginator [pageSizeOptions]="pageSizeOptions"
-                        showFirstLastButtons 
-                        aria-label="Select page of grade elements">
+                <!-- paginator -->
+                <mat-paginator #paginator [length]="totalRows" [pageIndex]="currentPage" [pageSize]="pageSize" showFirstLastButtons
+                    [pageSizeOptions]="pageSizeOptions" (page)="pageChanged($event)" aria-label="SSelect page of grade elements">
                 </mat-paginator>
                 <!-- End Content -->
             </div>
         </div>
-       
-       
-
     </div> <!-- end col -->
 </div>

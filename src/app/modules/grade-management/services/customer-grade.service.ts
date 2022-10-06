@@ -1,4 +1,5 @@
 ﻿import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ApiService } from '../../../core/_services/api.service';
 
 
@@ -6,8 +7,8 @@ import { ApiService } from '../../../core/_services/api.service';
 export class CustomerGradeService {
     constructor(private apiService: ApiService) { }
 
-    getAll() 
+    GetAllCustomerGradeList(pageNo:any,pageSize:any,sortOrder:any) : Observable<any>
     {
-        return this.apiService.get("CustomerGrade/GetAll");
+        return this.apiService.get(`CustomerGrade/GetAllCustomerGradeList?pageNo=${pageNo}&pageSize=${pageSize}&sortOrder=${sortOrder}`);
     }
 }
