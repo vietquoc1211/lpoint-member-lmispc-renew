@@ -20,6 +20,7 @@ import { MaterialModule } from '../../shared/material.module';
         // custumer grade
         _grade.CustomerGradeListComponent,
         _grade.CustomerGradeDetailComponent,
+        _grade.CustomerGradeEditComponent,
 
         // grade management
         _grade.GradeInfomationComponent,

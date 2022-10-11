@@ -3,8 +3,10 @@ import { CustomerGradeService } from '../../services/customer-grade.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { GradeInfo } from '../../models/grade-information.model';
 import { ExportCsvService } from '../../../../shared/services/exportCsv.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmationDialogComponent } from 'src/app/shared/component/confirmation-dialog/confirmation-dialog.component';
+import { CustomerGradeEditComponent } from '../customer-grade-edit/customer-grade-edit.component';
 @Component({
   selector: 'app-customer-grade-list',
   templateUrl: './customer-grade-list.component.html',
@@ -20,12 +22,17 @@ export class CustomerGradeListComponent implements OnInit {
   dataSource = new MatTableDataSource();
   displayedColumns = ['stt', 'memberno', 'membernm', 'grade', 'point', 'startymd', 'endymd', 'usegbn', 'transcnt', 'action'];
 
+
+  public minDate: any;
+
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
+  @ViewChild('dp1') dp1:any;
 
   constructor(private customergradeService: CustomerGradeService,
     private spinnerService: NgxSpinnerService,
-    private csvService: ExportCsvService
+    private csvService: ExportCsvService,
+    public dialog: MatDialog
   ) { }
 
 
@@ -98,4 +105,46 @@ export class CustomerGradeListComponent implements OnInit {
       this.spinnerService.hide();
     })
   }
+
+  onShowDialogGrade(action: string, data: any) {
+    let dialogRef = this.dialog.open(CustomerGradeEditComponent, {
+      data: {
+        data: data,
+        action: action
+      },
+      width: '600px',
+      disableClose: true,
+      panelClass: 'custom-modalbox'
+    });
+  }
+
+  onDelete(element: any): void {
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent,{
+      data:{
+        message: 'Are you sure want to delete?',
+        buttonText: {
+          ok: 'Save',
+          cancel: 'No'
+        }
+      }
+    });  
+    dialogRef.afterClosed().subscribe((confirmed: boolean) => {
+      if (confirmed) {
+
+      }
+    });
+  }
+
+  Changedate(e:any) {
+    // if (e)
+    //   if (this.formdata.controls.NgayBatDau.value > this.formdata.controls.NgayKetThuc.value) {
+    //     this.openPicker();
+    //   }
+    // this.minDate = new Date(this.formdata.controls.NgayBatDau.value);
+  }
+
+  openPicker() {
+    this.dp1.open();
+  }
+
 }

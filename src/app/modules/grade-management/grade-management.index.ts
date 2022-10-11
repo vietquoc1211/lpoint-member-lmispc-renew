@@ -1,5 +1,6 @@
 // Custumer grade
 export * from "./pages/customer-grade-list/customer-grade-list.component";
+export * from "./pages/customer-grade-edit/customer-grade-edit.component";
 export * from "../grade-management/pages/customer-grade-detail/customer-grade-detail.component"
 
 // grade management

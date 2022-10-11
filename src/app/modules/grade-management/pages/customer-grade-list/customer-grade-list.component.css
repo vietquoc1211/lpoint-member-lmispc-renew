@@ -31,6 +31,10 @@ td.mat-footer-cell {
     max-height: 600px;
 }
 
+.btn-search-grade {
+  margin-right: 10px;  
+}
+
 @media screen and (max-width: 600px) {
   .mat-paginator-range-label {
     margin: 0;
