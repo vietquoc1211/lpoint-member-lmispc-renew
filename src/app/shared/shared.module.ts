@@ -21,7 +21,7 @@ import * as shared from './shared.index';
       MaterialModule
     ],
     providers: [
-      
+      shared.ExportCsvService
     ]
 })
 export class SharedModule {

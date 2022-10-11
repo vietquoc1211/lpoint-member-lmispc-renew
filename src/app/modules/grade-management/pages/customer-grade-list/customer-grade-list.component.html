@@ -9,9 +9,8 @@
                     </div>
                     <div class="col-sm-8">
                         <div class="text-sm-end">
-                            <button type="button" class="btn btn-success mb-2 me-1"><i class="mdi mdi-cog"></i></button>
                             <button type="button" class="btn btn-light mb-2 me-1" (click)="getData()">Search</button>
-                            <button type="button" class="btn btn-light mb-2">Export</button>
+                            <button type="button" class="btn btn-light mb-2" (click)="exportData()">Export</button>
                         </div>
                     </div><!-- end col-->
                 </div>
@@ -21,21 +20,21 @@
                         <!-- Position Column -->
                         <ng-container matColumnDef="stt">
                             <th mat-header-cell *matHeaderCellDef> Stt </th>
-                            <td mat-cell *matCellDef="let element; let i = index">{{i + 1}}</td>
+                            <td mat-cell *matCellDef="let element"> {{element.stt}} </td>
                         </ng-container>
-        
+
                         <!-- Name Column -->
                         <ng-container matColumnDef="memberno">
                             <th mat-header-cell *matHeaderCellDef> Mã số khách hàng </th>
                             <td mat-cell *matCellDef="let element"> {{element.memberno}} </td>
                         </ng-container>
-        
+
                         <!-- Weight Column -->
                         <ng-container matColumnDef="membernm">
                             <th mat-header-cell *matHeaderCellDef> Tên khách hàng </th>
                             <td mat-cell *matCellDef="let element"> {{element.membernm}} </td>
                         </ng-container>
-        
+
                         <!-- Symbol Column -->
                         <ng-container matColumnDef="grade">
                             <th mat-header-cell *matHeaderCellDef> Phân loại hạng </th>
@@ -46,35 +45,36 @@
                             <th mat-header-cell *matHeaderCellDef> Số điểm tích lũy </th>
                             <td mat-cell *matCellDef="let element"> {{element.point | number }} </td>
                         </ng-container>
-        
+
                         <!-- startymd Column -->
                         <ng-container matColumnDef="startymd">
                             <th mat-header-cell *matHeaderCellDef> Ngày bắt đầu tham gia </th>
                             <td mat-cell *matCellDef="let element"> {{element.startymd}} </td>
                         </ng-container>
-        
+
                         <!-- Symbol endymd -->
                         <ng-container matColumnDef="endymd">
                             <th mat-header-cell *matHeaderCellDef> Ngày kết thúc </th>
                             <td mat-cell *matCellDef="let element"> {{element.endymd}} </td>
                         </ng-container>
-        
+
                         <!-- usegbn Column -->
                         <ng-container matColumnDef="usegbn">
                             <th mat-header-cell *matHeaderCellDef> Trạng thái </th>
-                            <td mat-cell *matCellDef="let element"> 
+                            <td mat-cell *matCellDef="let element">
                                 <span *ngIf="element.usegbn=='1'" class="badge bg-success">Active</span>
                                 <span *ngIf="element.usegbn!='1'" class="badge bg-danger">Deactive</span>
                             </td>
                         </ng-container>
-                        
+
                         <!-- Action Column -->
                         <ng-container matColumnDef="action">
                             <th mat-header-cell *matHeaderCellDef> Action </th>
-                            <td mat-cell *matCellDef="let element" class="action-link"> 
-                            <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                            <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                            <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                            <td mat-cell *matCellDef="let element" class="action-link">
+                                <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
+                                <a href="javascript:void(0);" class="action-icon"> <i
+                                        class="mdi mdi-square-edit-outline"></i></a>
+                                <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
                             </td>
                         </ng-container>
 
@@ -83,14 +83,15 @@
                             <th mat-header-cell *matHeaderCellDef> Quá trình kiểm tra </th>
                             <td mat-cell *matCellDef="let element"> {{element.transcnt}} </td>
                         </ng-container>
-        
+
                         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                     </table>
                 </div> <!-- end preview-->
                 <!-- paginator -->
-                <mat-paginator #paginator [length]="totalRows" [pageIndex]="currentPage" [pageSize]="pageSize" showFirstLastButtons
-                    [pageSizeOptions]="pageSizeOptions" (page)="pageChanged($event)" aria-label="SSelect page of grade elements">
+                <mat-paginator #paginator [length]="totalRows" [pageIndex]="currentPage" [pageSize]="pageSize"
+                    showFirstLastButtons [pageSizeOptions]="pageSizeOptions" (page)="pageChanged($event)"
+                    aria-label="SSelect page of grade elements">
                 </mat-paginator>
                 <!-- End Content -->
             </div>

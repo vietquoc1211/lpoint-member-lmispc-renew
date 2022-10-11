@@ -7,8 +7,13 @@ import { ApiService } from '../../../core/_services/api.service';
 export class CustomerGradeService {
     constructor(private apiService: ApiService) { }
 
-    GetAllCustomerGradeList(pageNo:any,pageSize:any,sortOrder:any) : Observable<any>
+    GetAll(pageNo:any,pageSize:any,sortOrder:any) : Observable<any>
     {
-        return this.apiService.get(`CustomerGrade/GetAllCustomerGradeList?pageNo=${pageNo}&pageSize=${pageSize}&sortOrder=${sortOrder}`);
+        return this.apiService.get(`CustomerGrade/GetAll?pageNo=${pageNo}&pageSize=${pageSize}&sortOrder=${sortOrder}`);
+    }
+
+    ExportList() : Observable<any>
+    {
+        return this.apiService.get(`CustomerGrade/ExportList`);
     }
 }
