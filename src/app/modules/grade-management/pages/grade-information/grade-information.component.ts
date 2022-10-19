@@ -40,7 +40,7 @@ export class GradeInfomationComponent {
     
     async getData(){
       this.spinnerService.show();
-      this.gradeinfoService.getAll().subscribe(res =>{
+      this.gradeinfoService.Get().subscribe(res =>{
         this.dataGrade = res;
         this.dataSource = new MatTableDataSource(this.dataGrade);
         this.dataSource.paginator = this.paginator;
@@ -72,7 +72,13 @@ export class GradeInfomationComponent {
       });  
       dialogRef.afterClosed().subscribe((confirmed: boolean) => {
         if (confirmed) {
-
+          this.spinnerService.show();
+          this.gradeinfoService.Delete(element.gradecd).subscribe(res =>{
+            this.dataGrade = res;
+            this.dataSource = new MatTableDataSource(this.dataGrade);
+            this.dataSource.paginator = this.paginator;
+            this.spinnerService.hide();
+          })
         }
       });
     }

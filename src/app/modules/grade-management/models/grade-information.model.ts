@@ -2,10 +2,10 @@ export class GradeInfo {
     asscd: string = '';
     gradecd: string = '';
     gradenm: string = '';
-    usegbn: boolean = false;
+    usegbn: number = 0;
     fromcnt: string = '';
     tocnt: string = '';
-    ftpsend: boolean = false;
+    ftpsend: number = 0;
     insymd: string = '';
     inssabun: string = '';
     lastymd: string = '';
