@@ -39,8 +39,8 @@ export class SettingRuleCustomerGradeComponent {
     
     async getData(){
       this.spinnerService.show();
-      this.settingRuleService.getAll().subscribe(res =>{
-        this.dataGrade = res;
+      this.settingRuleService.Get().subscribe(res =>{
+        this.dataGrade = res.result;
         this.dataSource = new MatTableDataSource(this.dataGrade);
         this.dataSource.paginator = this.paginator;
         this.spinnerService.hide();
