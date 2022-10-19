@@ -27,13 +27,15 @@ export class GradeInfomationEditComponent {
     }
 
     onSave() {
-        if(this.dataGrade)
+        if(this.dataGrade.gradecd && this.action == "add")
         {
             this.gradeinfoService.Post(this.dataGrade).subscribe(res =>{
-                // this.dataGrade = res;
-                // this.dataSource = new MatTableDataSource(this.dataGrade);
-                // this.dataSource.paginator = this.paginator;
-              })
+                this.dialogRef.close(res);
+            });
+        } else if (this.dataGrade.gradecd) {
+            this.gradeinfoService.Put(this.dataGrade.gradecd,this.dataGrade).subscribe(res =>{
+                this.dialogRef.close(res);
+            });
         }
     }
 }

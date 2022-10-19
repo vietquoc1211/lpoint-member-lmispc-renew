@@ -6,6 +6,8 @@ import { GradeInfoService } from '../../services/grade-information.service';
 import { MatDialog } from '@angular/material/dialog';
 import { GradeInfomationEditComponent } from './grade-information-edit/grade-information-edit.component';
 import { ConfirmationDialogComponent } from '../../../../shared/component/confirmation-dialog/confirmation-dialog.component';
+import { MessageConstants } from 'src/app/core/_common/messageConstants';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
     selector: "grade-infomation",
@@ -27,7 +29,8 @@ export class GradeInfomationComponent {
 
     constructor( private gradeinfoService: GradeInfoService,
         private spinnerService: NgxSpinnerService,
-        public dialog: MatDialog
+        public dialog: MatDialog,
+        private _Toastr: ToastrService
       ) { }
     
     ngOnInit() {
@@ -45,6 +48,8 @@ export class GradeInfomationComponent {
         this.dataSource = new MatTableDataSource(this.dataGrade);
         this.dataSource.paginator = this.paginator;
         this.spinnerService.hide();
+      },error => {
+        this.spinnerService.hide();
       })
     }
     
@@ -57,7 +62,13 @@ export class GradeInfomationComponent {
         width: '600px',
         disableClose: true,
         panelClass: 'custom-modalbox'
+      })
+
+      dialogRef.afterClosed().subscribe(result => {
+        this._Toastr.success(MessageConstants.CREATED_OK_MSG);
+        this.getData();
       });
+
     }
 
     onDelete(element: any): void {
@@ -74,10 +85,13 @@ export class GradeInfomationComponent {
         if (confirmed) {
           this.spinnerService.show();
           this.gradeinfoService.Delete(element.gradecd).subscribe(res =>{
-            this.dataGrade = res;
-            this.dataSource = new MatTableDataSource(this.dataGrade);
-            this.dataSource.paginator = this.paginator;
+            this._Toastr.success(MessageConstants.DELETED_OK_MSG);
+            this.getData();
             this.spinnerService.hide();
+          },error => {
+            this.spinnerService.hide();
+             console.log(error);
+            this._Toastr.error(MessageConstants.SERVE_ERROR_MSG);
           })
         }
       });

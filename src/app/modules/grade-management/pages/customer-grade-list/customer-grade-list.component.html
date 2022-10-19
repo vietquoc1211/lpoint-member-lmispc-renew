@@ -25,7 +25,7 @@
                             <button type="button" class="btn btn-primary btn-search-grade" (click)="getData()"><i
                                     class="mdi mdi-magnify me-2"></i> <span>Search</span> </button>
                             <button type="button" class="btn btn-info" (click)="exportData()"><i
-                                    class="mdi mdi-cloud-download me-1"></i> Export Csv</button>
+                                    class="mdi mdi-cloud-download me-1"></i> Export</button>
                         </div>
                     </div><!-- end col-->
                 </div>
@@ -53,7 +53,7 @@
                         <!-- Symbol Column -->
                         <ng-container matColumnDef="grade">
                             <th mat-header-cell *matHeaderCellDef> Phân loại hạng </th>
-                            <td mat-cell *matCellDef="let element"> {{element.grade}} </td>
+                            <td mat-cell *matCellDef="let element"> {{element.gradenm}} </td>
                         </ng-container>
                         <!-- Point Column -->
                         <ng-container matColumnDef="point">

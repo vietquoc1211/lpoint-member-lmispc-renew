@@ -28,6 +28,13 @@ table {
     padding: 0 3px;
     cursor: pointer;
   }
+  .content-grade-list {
+    max-height: 600px;
+  }
+
+  .btn-search-grade {
+    margin-right: 10px;  
+  }
   
   @media screen and (max-width: 600px) {
     .mat-paginator-range-label {

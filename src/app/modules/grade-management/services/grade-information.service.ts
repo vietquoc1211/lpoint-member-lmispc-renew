@@ -18,7 +18,7 @@ export class GradeInfoService {
     }
 
     Put(gradecd: string,body: GradeInfo) {
-        return this.apiService.put(`GradeInfo/${gradecd}`);
+        return this.apiService.put(`GradeInfo/${gradecd}`,body);
     }
 
     Delete(gradecd: string) {

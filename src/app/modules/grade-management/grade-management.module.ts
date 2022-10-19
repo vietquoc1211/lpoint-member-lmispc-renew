@@ -5,7 +5,7 @@ import { GradeManagementRoutingModule } from './grade-management-routing.module'
 import * as _grade from './grade-management.index';
 import { SharedModule } from '../../shared/shared.module';
 import { MaterialModule } from '../../shared/material.module';
-
+import { MatTableExporterModule } from 'mat-table-exporter';
 @NgModule({
     imports: [
         CommonModule,
@@ -13,7 +13,8 @@ import { MaterialModule } from '../../shared/material.module';
         ReactiveFormsModule,
         GradeManagementRoutingModule,
         SharedModule,
-        MaterialModule
+        MaterialModule,
+        MatTableExporterModule
     ], 
     declarations: 
     [
@@ -31,6 +32,7 @@ import { MaterialModule } from '../../shared/material.module';
         _grade.SettingRuleCustomerGradeEditComponent
     ],
     providers: [
+        MatTableExporterModule
     ]
 })
 export class GradeManagementModule {

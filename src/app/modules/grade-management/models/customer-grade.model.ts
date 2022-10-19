@@ -1,7 +1,8 @@
 export class CustomerGrade {
     memberno: string = '';
     membernm: string = '';
-    grade: string = '';
+    gradecd: string = '';
+    gradenm: string = '';
     eevenue: string = '';
     startymd: string = '';
     endymd: string = '';
