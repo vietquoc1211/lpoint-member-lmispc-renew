@@ -7,6 +7,8 @@ import { ExportCsvService } from '../../../../shared/services/exportCsv.service'
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from 'src/app/shared/component/confirmation-dialog/confirmation-dialog.component';
 import { CustomerGradeEditComponent } from '../customer-grade-edit/customer-grade-edit.component';
+import { MessageConstants } from 'src/app/core/_common/messageConstants';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-customer-grade-list',
   templateUrl: './customer-grade-list.component.html',
@@ -32,7 +34,8 @@ export class CustomerGradeListComponent implements OnInit {
   constructor(private customergradeService: CustomerGradeService,
     private spinnerService: NgxSpinnerService,
     private csvService: ExportCsvService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private _Toastr: ToastrService
   ) { }
 
 
@@ -82,7 +85,7 @@ export class CustomerGradeListComponent implements OnInit {
         },
         {
           label: "Phân loại hạng",
-          key: "grade"
+          key: "gradenm"
         },
         {
           label: "Số điểm tích lũy",
@@ -116,6 +119,11 @@ export class CustomerGradeListComponent implements OnInit {
       disableClose: true,
       panelClass: 'custom-modalbox'
     });
+    dialogRef.afterClosed().subscribe(result => {
+      if(result){
+        this.getData();
+      }
+    });
   }
 
   onDelete(element: any): void {
@@ -130,7 +138,16 @@ export class CustomerGradeListComponent implements OnInit {
     });  
     dialogRef.afterClosed().subscribe((confirmed: boolean) => {
       if (confirmed) {
-
+        this.spinnerService.show();
+        this.customergradeService.Delete(element.memberno).subscribe(res =>{
+          this._Toastr.success(MessageConstants.DELETED_OK_MSG);
+          this.getData();
+          this.spinnerService.hide();
+        },error => {
+          this.spinnerService.hide();
+           console.log(error);
+          this._Toastr.error(MessageConstants.SERVE_ERROR_MSG);
+        })
       }
     });
   }

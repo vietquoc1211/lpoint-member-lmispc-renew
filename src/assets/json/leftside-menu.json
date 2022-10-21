@@ -2,6 +2,7 @@
     "dataMenu": [
         {
             "groupsTilte": "Dashboards",
+            "hideMenu": "0",
             "Pages": [
                 {
                     "pageTitle": "Dashboards",
@@ -14,6 +15,7 @@
         },
         {
             "groupsTilte": "Quản lý khách hàng",
+            "hideMenu": "1",
             "Pages": [
                 {
                     "pageTitle": "Quản lý khách hàng",
@@ -250,6 +252,7 @@
         },
         {
             "groupsTilte": "Quản lý hạng thẻ",
+            "hideMenu": "0",
             "Pages": [
                 {
                     "pageTitle": "Phân hạng khách hàng",

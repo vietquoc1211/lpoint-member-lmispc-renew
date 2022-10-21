@@ -42,7 +42,7 @@ export class GradeSettingAccumulationComponent {
     
     async getData(){
       this.spinnerService.show();
-      this._gradeSettingService.getAll().subscribe(res =>{
+      this._gradeSettingService.Get().subscribe(res =>{
         this.dataGrade = res;
         this.dataSource = new MatTableDataSource(this.dataGrade);
         this.dataSource.paginator = this.paginator;

@@ -30,11 +30,11 @@ export class GradeInfomationEditComponent {
         if(this.dataGrade.gradecd && this.action == "add")
         {
             this.gradeinfoService.Post(this.dataGrade).subscribe(res =>{
-                this.dialogRef.close(res);
+                this.dialogRef.close(this.dataGrade);
             });
         } else if (this.dataGrade.gradecd) {
             this.gradeinfoService.Put(this.dataGrade.gradecd,this.dataGrade).subscribe(res =>{
-                this.dialogRef.close(res);
+                this.dialogRef.close(this.dataGrade);
             });
         }
     }

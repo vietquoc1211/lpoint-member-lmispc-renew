@@ -7,7 +7,7 @@
                         <div class="row">
                             <div class="col-sm-3">
                                 <mat-form-field>
-                                    <input matInput DateMask formControlName="NgayBatDau" [matDatepicker]="dp1"
+                                    <input matInput DateMask [matDatepicker]="dp1"
                                         (dateChange)="Changedate($event)" placeholder="Ngày bắt đầu tham gia">
                                     <mat-datepicker-toggle matSuffix [for]="dp1"></mat-datepicker-toggle>
                                     <mat-datepicker #dp1></mat-datepicker>
@@ -15,7 +15,7 @@
                             </div>
                             <div  class="col-sm-3">
                                 <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Mã khách hàng" formControlName="memberno">
+                                    <input matInput placeholder="Mã khách hàng" >
                                 </mat-form-field>                        
                             </div>
                         </div>
@@ -78,7 +78,7 @@
                             <th mat-header-cell *matHeaderCellDef> Trạng thái </th>
                             <td mat-cell *matCellDef="let element">
                                 <span *ngIf="element.usegbn=='1'" class="badge bg-success">Active</span>
-                                <span *ngIf="element.usegbn!='1'" class="badge bg-danger">Deactive</span>
+                                <span *ngIf="element.usegbn=='0'" class="badge bg-danger">Deactive</span>
                             </td>
                         </ng-container>
 

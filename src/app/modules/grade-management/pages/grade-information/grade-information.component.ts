@@ -65,8 +65,10 @@ export class GradeInfomationComponent {
       })
 
       dialogRef.afterClosed().subscribe(result => {
-        this._Toastr.success(MessageConstants.CREATED_OK_MSG);
-        this.getData();
+        if(result){
+          this._Toastr.success(action == "add" ? MessageConstants.CONFIRM_ADD_MSG : MessageConstants.UPDATED_OK_MSG);
+          this.getData();
+        }
       });
 
     }
