@@ -34,7 +34,13 @@ td.mat-footer-cell {
 .btn-search-grade {
   margin-right: 10px;  
 }
-
+.search-header {
+  margin-top: -10px;
+  margin-bottom: 0!important;
+}
+.search-group-button{
+  margin-top: 30px;
+}
 @media screen and (max-width: 600px) {
   .mat-paginator-range-label {
     margin: 0;

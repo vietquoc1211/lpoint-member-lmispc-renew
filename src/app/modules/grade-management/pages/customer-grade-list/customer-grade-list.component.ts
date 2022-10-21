@@ -9,6 +9,7 @@ import { ConfirmationDialogComponent } from 'src/app/shared/component/confirmati
 import { CustomerGradeEditComponent } from '../customer-grade-edit/customer-grade-edit.component';
 import { MessageConstants } from 'src/app/core/_common/messageConstants';
 import { ToastrService } from 'ngx-toastr';
+import { CustomerGradeSearch } from '../../models/customer-grade.model';
 @Component({
   selector: 'app-customer-grade-list',
   templateUrl: './customer-grade-list.component.html',
@@ -18,12 +19,12 @@ export class CustomerGradeListComponent implements OnInit {
   DataGrade: any;
   isLoading = false;
   totalRows = 0;
-  pageSize = 10;
-  currentPage = 0;
+  // pageSize = 10;
+  // currentPage = 0;
   pageSizeOptions: number[] = [10, 25, 50, 100];
   dataSource = new MatTableDataSource();
   displayedColumns = ['stt', 'memberno', 'membernm', 'grade', 'point', 'startymd', 'endymd', 'usegbn', 'transcnt', 'action'];
-
+  dataSearch: CustomerGradeSearch = new CustomerGradeSearch();
 
   public minDate: any;
 
@@ -49,27 +50,28 @@ export class CustomerGradeListComponent implements OnInit {
 
   async getData() {
     this.spinnerService.show();
-    this.customergradeService.GetAll(this.currentPage, this.pageSize, "MEMBERNO").subscribe(res => {
-      this.DataGrade = res;
-      this.dataSource.data = res;
+   
+    this.customergradeService.GetAll(this.dataSearch).subscribe(res => {
+      this.DataGrade = res.customerGrade;
+      this.dataSource.data = res.customerGrade;
       this.dataSource.paginator = this.paginator;
       setTimeout(() => {
-        this.paginator.pageIndex = this.currentPage;
-        this.paginator.length = 121073;
+        this.paginator.pageIndex = this.dataSearch.pageno
+        this.paginator.length = res.total;
       });
       this.spinnerService.hide();
     })
   }
 
   pageChanged(event: PageEvent) {
-    this.pageSize = event.pageSize;
-    this.currentPage = event.pageIndex;
+    this.dataSearch.pagesize = event.pageSize;
+    this.dataSearch.pageno = event.pageIndex;
     this.getData();
   }
 
   async exportData() {
     this.spinnerService.show();
-    this.customergradeService.ExportList().subscribe(res => {
+    this.customergradeService.ExportList(this.dataSearch).subscribe(res => {
       let fields = [
         {
           label: "stt",

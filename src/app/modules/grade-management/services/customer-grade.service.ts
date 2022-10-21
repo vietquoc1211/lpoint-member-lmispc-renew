@@ -1,21 +1,21 @@
 ﻿import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiService } from '../../../core/_services/api.service';
-import { CustomerGrade } from '../models/customer-grade.model';
+import { CustomerGrade, CustomerGradeSearch } from '../models/customer-grade.model';
 
 
 @Injectable({ providedIn: 'root' })
 export class CustomerGradeService {
     constructor(private apiService: ApiService) { }
 
-    GetAll(pageNo:any,pageSize:any,sortOrder:any) : Observable<any>
+    GetAll(body: CustomerGradeSearch) : Observable<any>
     {
-        return this.apiService.get(`CustomerGrade/GetAll?pageNo=${pageNo}&pageSize=${pageSize}&sortOrder=${sortOrder}`);
+        return this.apiService.post(`CustomerGrade/GetAll`,body);
     }
 
-    ExportList() : Observable<any>
+    ExportList(body: CustomerGradeSearch) : Observable<any>
     {
-        return this.apiService.get(`CustomerGrade/ExportList`);
+        return this.apiService.post(`CustomerGrade/ExportList`,body);
     }
 
     GetById(memberno: string) {

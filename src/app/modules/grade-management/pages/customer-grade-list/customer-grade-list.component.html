@@ -2,25 +2,41 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <div class="row mb-2">
+                <div class="row mb-2 search-header">
                     <div class="col-sm-8">
                         <div class="row">
-                            <div class="col-sm-3">
-                                <mat-form-field>
-                                    <input matInput DateMask [matDatepicker]="dp1"
-                                        (dateChange)="Changedate($event)" placeholder="Ngày bắt đầu tham gia">
-                                    <mat-datepicker-toggle matSuffix [for]="dp1"></mat-datepicker-toggle>
-                                    <mat-datepicker #dp1></mat-datepicker>
-                                </mat-form-field>
+                            <div  class="col-sm-3">
+                                <div class="mb-3">
+                                    <label for="gradenm" class="form-label">Phân loại hạng</label>
+                                    <select class="form-select form-select-grade mb-3" aria-label=".form-select-grade" [(ngModel)]="dataSearch.gradecd">
+                                          <option value="">All</option>
+                                          <option value="G001">Platinum</option>
+                                          <option value="G002">Gold</option>
+                                          <option value="G003">Sivel</option>
+                                    </select>
+                                </div>                        
                             </div>
                             <div  class="col-sm-3">
-                                <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Mã khách hàng" >
-                                </mat-form-field>                        
+                                <div class="mb-3">
+                                    <label class="form-label">Mã khách hàng</label>
+                                    <input type="text" class="form-control" [(ngModel)]="dataSearch.memberno" id="memberno" placeholder="Mã khách hàng">
+                                </div>                         
+                            </div>
+                            <div  class="col-sm-3">
+                                <div class="mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="text" class="form-control" [(ngModel)]="dataSearch.email" id="Email" placeholder="Email">
+                                </div>                     
+                            </div>
+                            <div  class="col-sm-3">
+                                <div class="mb-3">
+                                    <label class="form-label">Số điện thoại</label>
+                                    <input type="text" class="form-control" [(ngModel)]="dataSearch.phonenumber" id="phonenumber" placeholder="Số điện thoại">
+                                </div>                     
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-4 search-group-button">
                         <div class="text-sm-end">
                             <button type="button" class="btn btn-primary btn-search-grade" (click)="getData()"><i
                                     class="mdi mdi-magnify me-2"></i> <span>Search</span> </button>
@@ -105,7 +121,7 @@
                     </table>
                 </div> <!-- end preview-->
                 <!-- paginator -->
-                <mat-paginator #paginator [length]="totalRows" [pageIndex]="currentPage" [pageSize]="pageSize"
+                <mat-paginator #paginator [length]="totalRows" [pageIndex]="dataSearch.pageno" [pageSize]="dataSearch.pagesize"
                     showFirstLastButtons [pageSizeOptions]="pageSizeOptions" (page)="pageChanged($event)"
                     aria-label="Select page of grade elements">
                 </mat-paginator>
