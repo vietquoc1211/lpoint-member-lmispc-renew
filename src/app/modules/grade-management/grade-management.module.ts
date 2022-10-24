@@ -21,6 +21,7 @@ import { MatTableExporterModule } from 'mat-table-exporter';
         // custumer grade
         _grade.CustomerGradeListComponent,
         _grade.CustomerGradeDetailComponent,
+        _grade.CustomerGradeDetailDialogComponent,
         _grade.CustomerGradeEditComponent,
 
         // grade management

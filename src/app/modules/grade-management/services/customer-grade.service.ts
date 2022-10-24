@@ -18,6 +18,14 @@ export class CustomerGradeService {
         return this.apiService.post(`CustomerGrade/ExportList`,body);
     }
 
+    GetCustomerGradeDetail(memberno: string) {
+        return this.apiService.get(`CustomerGrade/CustomerGradeDetail/${memberno}`);
+    }
+
+    GetCustomerGradeHistory(memberno: string) {
+        return this.apiService.get(`CustomerGrade/CustomerGradeHistory/${memberno}`);
+    }
+
     GetById(memberno: string) {
         return this.apiService.get(`CustomerGrade/${memberno}`);
     }

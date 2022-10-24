@@ -3214,3 +3214,9 @@ td.mat-footer-cell {
     padding: 0!important;
   }
 }
+.custom-modalbox-overflow{
+  .mat-dialog-container {
+    padding: 0!important;
+    overflow: hidden!important;
+  }
+}

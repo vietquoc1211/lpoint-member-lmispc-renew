@@ -271,22 +271,7 @@
                             "pageTitle": "Chi tiết hạng thẻ khách hàng",
                             "routerLink": "/grade-management/customer-grade-detail",
                             "icon": ""
-                        },
-                        {
-                            "pageTitle": "Tìm kiếm hạng thẻ khách hàng",
-                            "routerLink": "/grade-management/customer-grade-search",
-                            "icon": ""
-                        },
-                        {
-                            "pageTitle": "Chỉnh sửa hạng thẻ khách hàng",
-                            "routerLink": "/grade-management/customer-grade-edit",
-                            "icon": ""
-                        },
-                        {
-                            "pageTitle": "Xuất dữ liệu theo hạng thẻ",
-                            "routerLink": "/grade-management/export-grade-list",
-                            "icon": ""
-                        }
+                        }     
                     ]
                 },
                 {

@@ -1,4 +1,3 @@
-<!-- <app-page-maintenance></app-page-maintenance> -->
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -6,58 +5,162 @@
                 <h4 class="header-title mt-0 mb-3">Thông tin chi tiết hạng thẻ</h4>
                 <div class="text-start">
                     <div class="mb-3">
-                        <label for="inputEmail4">Mã số khách hàng</label>
-                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                        <label for="memberno1" class="form-label">Mã khách hàng</label>
+                        <input class="form-control" name="memberno" #ctrl="ngModel" placeholder="Mã khách hàng" [(ngModel)]="dataDetail.memberno" (blur)="getData($event)" >
                       </div>
                     <div class="mb-3">
                         <label class="form-label">Tên khách hàng</label>
-                        <input id="bloodhound" class="form-control" type="text" placeholder="States of USA">
+                        <input name="membernm" class="form-control" type="text" [(ngModel)]="dataDetail.membernm" placeholder="Tên khách hàng" [readonly]="true">
+                        <!-- <span>{{dataDetail.membernm}}</span> -->
                     </div>
                     
                     <div class="mb-3">
                         <label class="form-label">Giới tính</label>
-                        <input type="text" class="form-control" data-provide="typeahead" id="prefetch" placeholder="States of USA">
+                        <input type="text" class="form-control" name="gioitinh" [(ngModel)]="dataDetail.sex" placeholder="Giới tính" [readonly]="true">
                     </div>
-                    
+                    <div class="mb-3">
+                        <label class="form-label">Ngày sinh</label>
+                        <input type="text" class="form-control" name="ngaysinh" [(ngModel)]="dataDetail.birthday" [readonly]="true">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Quốc Tịch</label>
+                        <input type="text" class="form-control" name="country" [(ngModel)]="dataDetail.country" [readonly]="true">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Số CMND/Hộ Chiếu</label>
+                        <input type="text" class="form-control" name="juminno" [(ngModel)]="dataDetail.juminno" [readonly]="true">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Số điện thoại</label>
+                        <input type="text" class="form-control" name="mobileno" [(ngModel)]="dataDetail.mobileno" [readonly]="true">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="text" class="form-control" name="Email"  [(ngModel)]="dataDetail.email" [readonly]="true">
+                    </div>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="mb-3">
+                                    <label class="form-label">Phường xã: </label> 
+                                    <input type="text" class="form-control" name="phuongxa"  [(ngModel)]="dataDetail.phuongxa" [readonly]="true">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="mb-3">
+                                    <label class="form-label">Quận Huyện: </label> 
+                                    <input type="text" class="form-control" name="quanhuyen"  [(ngModel)]="dataDetail.quanhuyen" [readonly]="true">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="mb-3">
+                                    <label class="form-label">Tỉnh Thành: </label> 
+                                    <input type="text" class="form-control" name="tinhthanh"  [(ngModel)]="dataDetail.tinhthanh" [readonly]="true">
+                                </div>
+                            </div>
+                        </div>                    
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Địa chỉ chi tiết</label>
+                        <input type="text" class="form-control" name="haddress" [(ngModel)]="dataDetail.haddress"  [readonly]="true">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Trạng thái</label>
+                        <span *ngIf="dataDetail.usegbn=='1'" class="badge bg-success status-class">Active</span>
+                        <span *ngIf="dataDetail.usegbn=='0'" class="badge bg-danger status-class">Deactive</span>
+                    </div>
+
+                      
                     <div class="mb-3">
                         <label class="form-label">Phân loại hạng tương ứng của khách hàng</label>
-                        <input type="text" class="form-control" data-provide="typeahead" id="remote" placeholder="States of USA">
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label class="form-label">Lịch sử cập nhật phân cấp (ngày và giờ cập nhật, cập nhật theo)</label>
-                        <input id="custom-templates" class="form-control" type="text" placeholder="States of USA">
+                        <input type="text" class="form-control" name="gradenm" placeholder="Phân loại hạng" [(ngModel)]="dataDetail.gradecd" [readonly]="true">
                     </div>
                     
                     <div class="mb-3">
                         <label class="form-label">Ngày bắt đầu tham gia</label>
-                        <input type="text" class="form-control" data-provide="typeahead" id="default-suggestions">
+                        <input type="text" class="form-control" name="startdate" [(ngModel)]="dataDetail.startymd" [readonly]="true">
                     </div>
                     
                     <div class="mb-3">
                         <label class="form-label">Ngày kết thúc</label>
-                        <input type="text" class="form-control" data-provide="typeahead" id="multiple-datasets">
+                        <input type="text" class="form-control" name="todate" [(ngModel)]="dataDetail.endymd" [readonly]="true">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Điểm tích lũy giao dịch trong năm</label>
-                        <input type="text" class="form-control" data-provide="typeahead" id="multiple-datasets">
+                        <input type="text" class="form-control" name="point" [(ngModel)]="dataDetail.point" [readonly]="true">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Số điện thoại</label>
-                        <input type="text" class="form-control" data-provide="typeahead" id="multiple-datasets">
+                        <label class="form-label">Số lần giao dịch</label>
+                        <input type="text" class="form-control" name="transcnt" [(ngModel)]="dataDetail.transcnt" [readonly]="true">
                     </div>
+
                     <div class="mb-3">
-                        <label class="form-label">Email</label>
-                        <input type="text" class="form-control" data-provide="typeahead" id="multiple-datasets">
+                        <label class="form-label">Lịch sử cập nhật phân cấp (ngày và giờ cập nhật, cập nhật theo)</label>
+                        <div class="table-responsive tab-pane content-grade-list">
+                            <div class="table-responsive tab-pane content-grade-list">
+                                <table mat-table class="table-striped" [dataSource]="dataHistory">
+                                    <!-- Name Column -->
+                                    <ng-container matColumnDef="memberno">
+                                        <th mat-header-cell *matHeaderCellDef> Mã số khách hàng </th>
+                                        <td mat-cell *matCellDef="let element"> {{element.memberno}} </td>
+                                    </ng-container>
+            
+                                    <!-- Weight Column -->
+                                    <ng-container matColumnDef="asscd">
+                                        <th mat-header-cell *matHeaderCellDef> Tên khách hàng </th>
+                                        <td mat-cell *matCellDef="let element"> {{element.asscd}} </td>
+                                    </ng-container>
+            
+                                    <!-- Symbol Column -->
+                                    <ng-container matColumnDef="gradenm">
+                                        <th mat-header-cell *matHeaderCellDef> Phân loại hạng </th>
+                                        <td mat-cell *matCellDef="let element"> {{element.gradenm}} </td>
+                                    </ng-container>
+                                    <!-- Point Column -->
+                                    <ng-container matColumnDef="workymd">
+                                        <th mat-header-cell *matHeaderCellDef> Số điểm tích lũy </th>
+                                        <td mat-cell *matCellDef="let element"> {{element.workymd }} </td>
+                                    </ng-container>
+                                    <!-- Point Column -->
+                                    <ng-container matColumnDef="worktime">
+                                            <th mat-header-cell *matHeaderCellDef> Số điểm tích lũy </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.worktime }} </td>
+                                    </ng-container>
+                                    
+                                    <!-- startymd Column -->
+                                    <ng-container matColumnDef="startymd">
+                                        <th mat-header-cell *matHeaderCellDef> Ngày bắt đầu tham gia </th>
+                                        <td mat-cell *matCellDef="let element"> {{element.startymd}} </td>
+                                    </ng-container>
+            
+                                    <!-- Symbol endymd -->
+                                    <ng-container matColumnDef="endymd">
+                                        <th mat-header-cell *matHeaderCellDef> Ngày kết thúc </th>
+                                        <td mat-cell *matCellDef="let element"> {{element.endymd}} </td>
+                                    </ng-container>
+            
+                                    <!-- usegbn Column -->
+                                    <ng-container matColumnDef="usegbn">
+                                        <th mat-header-cell *matHeaderCellDef> Trạng thái </th>
+                                        <td mat-cell *matCellDef="let element">
+                                            <span *ngIf="element.usegbn=='1'" class="badge bg-success">Active</span>
+                                            <span *ngIf="element.usegbn=='0'" class="badge bg-danger">Deactive</span>
+                                        </td>
+                                    </ng-container>
+        
+                                    <!-- transcnt Column -->
+                                    <ng-container matColumnDef="point">
+                                        <th mat-header-cell *matHeaderCellDef> Quá trình kiểm tra </th>
+                                        <td mat-cell *matCellDef="let element"> {{element.point}} </td>
+                                    </ng-container>
+            
+                                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                                </table>
+                            </div> <!-- end preview-->
+                        </div> <!-- end preview-->
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label">Địa chỉ</label>
-                        <input type="text" class="form-control" data-provide="typeahead" id="multiple-datasets">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Trạng thái</label>
-                        <input type="text" class="form-control" data-provide="typeahead" id="multiple-datasets">
-                    </div>
+
                 </div>
             </div>
         </div>

@@ -1,0 +1,8 @@
+.status-class {
+    margin-left: 15px;
+    font-size: 15px;
+}
+.custumer-grade-content {
+    height: 600px;
+    overflow: auto;
+}

@@ -10,6 +10,7 @@ import { CustomerGradeEditComponent } from '../customer-grade-edit/customer-grad
 import { MessageConstants } from 'src/app/core/_common/messageConstants';
 import { ToastrService } from 'ngx-toastr';
 import { CustomerGradeSearch } from '../../models/customer-grade.model';
+import { CustomerGradeDetailDialogComponent } from '../customer-grade-detail-dialog/customer-grade-detail-dialog.component';
 @Component({
   selector: 'app-customer-grade-list',
   templateUrl: './customer-grade-list.component.html',
@@ -124,6 +125,21 @@ export class CustomerGradeListComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if(result){
         this.getData();
+      }
+    });
+  }
+
+  onShowDialogDetail(memberno:any) {
+    let dialogRef = this.dialog.open(CustomerGradeDetailDialogComponent, {
+      data: memberno,
+      width: '900px',
+      height: '730px',
+      disableClose: true,
+      panelClass: 'custom-modalbox-overflow'
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if(result){
+        //this.getData();
       }
     });
   }

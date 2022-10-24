@@ -20,3 +20,31 @@ export class CustomerGradeSearch {
     pagesize: number = 10;
     sortorder: string = '';
 }
+
+export class CustomerGradeDetail {
+    memberno: string = '';
+    membernm: string = '';
+    sex: string = '';
+    birthday: string = '';
+    country: string = '';
+    juminno: string = '';
+    mobileno: string = '';
+    email: string = '';
+    ozipnolv1: string = '';
+    ozipnolv2: string = '';
+    ozipnolv3: string = '';
+    oaddress: string = '';
+    hzipnolv1: string = '';
+    tinhthanh: string = '';
+    hzipnolv2: string = '';
+    quanhuyen: string = '';
+    hzipnolv3: string = '';
+    phuongxa: string = '';
+    haddress: string = '';
+    gradecd: string = '';
+    startymd: string = '';
+    endymd: string = '';
+    transcnt: string = '';
+    point: string = '';
+    usegbn: string = '';
+}
