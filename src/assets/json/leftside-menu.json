@@ -275,7 +275,7 @@
                     ]
                 },
                 {
-                    "pageTitle": "Quản Lý Hạng Thẻ",
+                    "pageTitle": "Quản lý hạng thẻ",
                     "routerLink" : "",
                     "icon": "uil-bright",
                     "id":"sidebargrademanagement",
@@ -294,6 +294,25 @@
                         {
                             "pageTitle": "Cài đặt quy tắc tích lũy cho các hạng thẻ",
                             "routerLink": "/grade-management/setting-rule-customer-grade",
+                            "icon": ""
+                        }
+                    ]
+                },
+                {
+                    "pageTitle": "Quản lý ưu đãi hạng thẻ",
+                    "routerLink" : "",
+                    "icon": "uil-gift",
+                    "id":"sidebargradepromotion",
+                    "subPages": 
+                    [
+                        {
+                            "pageTitle": "Thông tin chương trình ưu đãi theo hạng thẻ ",
+                            "routerLink": "/grade-promotion/grade-promotion-info",
+                            "icon": ""
+                        },
+                        {
+                            "pageTitle": "Cài đặt ưu đãi cho các hạng thẻ ",
+                            "routerLink": "/grade-promotion/setting-rule-grade-promotion",
                             "icon": ""
                         }
                     ]

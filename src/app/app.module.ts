@@ -14,8 +14,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +30,6 @@ import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
     HttpClientModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
-    NgxMatSelectSearchModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
       closeButton: true,

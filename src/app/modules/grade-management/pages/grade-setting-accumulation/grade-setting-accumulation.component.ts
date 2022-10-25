@@ -6,6 +6,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from '../../../../shared/component/confirmation-dialog/confirmation-dialog.component';
 import { GradeSettingAccumulationService } from '../../services/grade-setting-accumulation.service';
 import { GradeSettingAccumulationEditComponent } from './grade-setting-accumulation-edit/grade-setting-accumulation-edit.component';
+import { MessageConstants } from 'src/app/core/_common/messageConstants';
+import { ToastrService } from 'ngx-toastr';
 
 @Component ({
     selector: "grade-setting-accumulation",
@@ -21,13 +23,14 @@ export class GradeSettingAccumulationComponent {
     currentPage = 1;
     pageSizeOptions: number[] = [10,25,50,100];
     dataSource = new MatTableDataSource();
-    displayedColumns = ['stt','asscd', 'gradecd', 'savetype','amount','yearreward','insymd','inssabun','lastymd','action'];
+    displayedColumns = ['stt','asscd', 'gradecd','gradenm','savetype','rate','amount','yearreward','action'];
     @ViewChild(MatPaginator)
     paginator!: MatPaginator;
 
     constructor(private _gradeSettingService: GradeSettingAccumulationService,
         private spinnerService: NgxSpinnerService,
-        public dialog: MatDialog
+        public dialog: MatDialog,
+        private _Toastr: ToastrService
       ) { 
 
     }
@@ -56,9 +59,17 @@ export class GradeSettingAccumulationComponent {
           data: data,
           action: action
         },
-        width: '600px',
+        width: '700px',
+        height: '600px',
         disableClose: true,
         panelClass: 'custom-modalbox'
+      });
+
+      dialogRef.afterClosed().subscribe(result => {
+        if(result){
+          this._Toastr.success(action == "add" ? MessageConstants.CREATED_OK_MSG : MessageConstants.UPDATED_OK_MSG);
+          this.getData();
+        }
       });
     }
 
@@ -74,7 +85,13 @@ export class GradeSettingAccumulationComponent {
       });  
       dialogRef.afterClosed().subscribe((confirmed: boolean) => {
         if (confirmed) {
-
+          this.spinnerService.show();
+          this._gradeSettingService.Delete(element.gradecd,element.asscd).subscribe(res =>{
+            this.spinnerService.hide();
+            this.getData();
+          },error => {
+            this.spinnerService.hide();
+          })
         }
       });
     }

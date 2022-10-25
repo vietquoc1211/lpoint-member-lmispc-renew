@@ -21,7 +21,7 @@ export class GradeSettingAccumulationService {
         return this.apiService.put(`GradeSettingAccumulation/${gradecd}`,body);
     }
 
-    Delete(gradecd: string) {
-        return this.apiService.delete(`GradeSettingAccumulation/${gradecd}`);
+    Delete(gradecd: string, asscd: string) {
+        return this.apiService.delete(`GradeSettingAccumulation/${gradecd}/${asscd}`);
     }
 }

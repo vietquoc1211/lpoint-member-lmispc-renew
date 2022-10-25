@@ -6,6 +6,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from '../../../../shared/component/confirmation-dialog/confirmation-dialog.component';
 import { SettingRuleCustomerGradeService } from "../../services/setting-rule-customer-grade.service";
 import { SettingRuleCustomerGradeEditComponent } from './setting-rule-customer-grade-edit/setting-rule-customer-grade-edit.component';
+import { MessageConstants } from 'src/app/core/_common/messageConstants';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
     selector: "setting-rule-customer-grade",
@@ -26,7 +28,9 @@ export class SettingRuleCustomerGradeComponent {
 
     constructor(private settingRuleService: SettingRuleCustomerGradeService,
         private spinnerService: NgxSpinnerService,
-        public dialog: MatDialog
+        public dialog: MatDialog,
+        private _Toastr: ToastrService
+
       ) { }
     
     ngOnInit() {
@@ -54,8 +58,15 @@ export class SettingRuleCustomerGradeComponent {
           action: action
         },
         width: '600px',
+        height: '600px',
         disableClose: true,
         panelClass: 'custom-modalbox'
+      });
+      dialogRef.afterClosed().subscribe(result => {
+        if(result){
+          this._Toastr.success(action == "add" ? MessageConstants.CREATED_OK_MSG : MessageConstants.UPDATED_OK_MSG);
+          this.getData();
+        }
       });
     }
 
@@ -71,7 +82,13 @@ export class SettingRuleCustomerGradeComponent {
       });  
       dialogRef.afterClosed().subscribe((confirmed: boolean) => {
         if (confirmed) {
-
+          this.spinnerService.show();
+          this.settingRuleService.Delete(element.asscd).subscribe(res =>{
+            this.spinnerService.hide();
+            this.getData();
+          },error => {
+            this.spinnerService.hide();
+          })
         }
       });
     }

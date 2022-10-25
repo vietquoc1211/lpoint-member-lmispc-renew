@@ -5,19 +5,24 @@
                 <div class="row mb-2">
                     <div class="col-sm-4">
                         <a class="btn btn-danger mb-2"><i
-                                class="mdi mdi-plus-circle me-2"></i>Add</a>
+                                class="mdi mdi-plus-circle me-2" (click)="onShowDialogSetting('add', null)"></i>Add</a>
                     </div>
                     <div class="col-sm-8">
                         <div class="text-sm-end">
-                            <button type="button" class="btn btn-success mb-2 me-1" (click)="onShowDialogSetting('add', null)"><i class="mdi mdi-cog"></i></button>
-                            <button type="button" class="btn btn-light mb-2 me-1" (click)="getData()">Search</button>
+                            <div class="text-sm-end">
+                                <button type="button" class="btn btn-primary btn-search-grade" (click)="getData()"><i
+                                        class="mdi mdi-magnify me-2"></i> <span>Search</span> </button>
+                                <button type="button" class="btn btn-info" (click)="exporter.exportTable('csv')"><i
+                                        class="mdi mdi-cloud-download me-1"></i> Export</button>
+                            </div>
                         </div>
                     </div><!-- end col-->
                 </div>
             </div>
               <!-- Content -->
               <div class="table-responsive tab-pane">
-                <table mat-table class="table-striped" [dataSource]="dataSource">
+                <table mat-table class="table-striped" [dataSource]="dataSource" matTableExporter
+                #exporter="matTableExporter">
                     <!-- Position Column -->
                     <ng-container matColumnDef="stt">
                         <th mat-header-cell *matHeaderCellDef> STT </th>
@@ -44,19 +49,19 @@
 
                     <!-- baseamount Column -->
                     <ng-container matColumnDef="baseamount">
-                        <th mat-header-cell *matHeaderCellDef> base amount </th>
+                        <th mat-header-cell *matHeaderCellDef> Số tiền mua hàng tối thiểu </th>
                         <td mat-cell *matCellDef="let element"> {{element.baseamount }} </td>
                     </ng-container>
     
                     <!-- cycle Column -->
                     <ng-container matColumnDef="cycle">
-                        <th mat-header-cell *matHeaderCellDef> cycle </th>
+                        <th mat-header-cell *matHeaderCellDef> Thời tháng áp dụng tính lũy (tháng) </th>
                         <td mat-cell *matCellDef="let element"> {{element.cycle}} </td>
                     </ng-container>
     
                     <!-- period endymd -->
                     <ng-container matColumnDef="period">
-                        <th mat-header-cell *matHeaderCellDef> gửi FTP </th>
+                        <th mat-header-cell *matHeaderCellDef> Giai đoạn</th>
                         <td mat-cell *matCellDef="let element"> {{element.period}} </td>
                     </ng-container>
 

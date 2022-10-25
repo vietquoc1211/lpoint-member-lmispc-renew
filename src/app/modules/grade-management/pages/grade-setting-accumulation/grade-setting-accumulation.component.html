@@ -4,20 +4,25 @@
           <div class="card-body">
               <div class="row mb-2">
                   <div class="col-sm-4">
-                      <a class="btn btn-danger mb-2"><i
-                              class="mdi mdi-plus-circle me-2"></i>Add</a>
+                    <a class="btn btn-danger mb-2" (click)="onShowDialogGradeSetting('add',null)"><i
+                        class="mdi mdi-plus-circle me-2"></i>Add</a>
                   </div>
                   <div class="col-sm-8">
                       <div class="text-sm-end">
-                          <button type="button" class="btn btn-success mb-2 me-1"><i class="mdi mdi-cog"></i></button>
-                          <button type="button" class="btn btn-light mb-2 me-1" (click)="getData()">Search</button>
+                          <div class="text-sm-end">
+                            <button type="button" class="btn btn-primary btn-search-grade" (click)="getData()"><i
+                                    class="mdi mdi-magnify me-2"></i> <span>Search</span> </button>
+                            <button type="button" class="btn btn-info" (click)="exporter.exportTable('csv')"><i
+                                    class="mdi mdi-cloud-download me-1"></i> Export</button>
+                        </div>
                       </div>
                   </div><!-- end col-->
               </div>
           </div>
             <!-- Content -->
             <div class="table-responsive tab-pane">
-              <table mat-table class="table-striped" [dataSource]="dataSource">
+              <table mat-table class="table-striped" [dataSource]="dataSource" matTableExporter
+              #exporter="matTableExporter">
                   <!-- Position Column -->
                   <ng-container matColumnDef="stt">
                       <th mat-header-cell *matHeaderCellDef> STT </th>
@@ -27,30 +32,36 @@
                   <!-- asscd Column -->
                   <ng-container matColumnDef="asscd">
                       <th mat-header-cell *matHeaderCellDef> Đơn vị liên kết </th>
-                      <td mat-cell *matCellDef="let element"> {{element.asscd}} </td>
+                      <td mat-cell *matCellDef="let element"> {{element.assnm}} </td>
                   </ng-container>
   
                   <!-- Gradecd Column -->
                   <ng-container matColumnDef="gradecd">
-                      <th mat-header-cell *matHeaderCellDef> gradecd </th>
+                      <th mat-header-cell *matHeaderCellDef> Mã Hạng Thẻ </th>
                       <td mat-cell *matCellDef="let element"> {{element.gradecd}} </td>
                   </ng-container>
-  
+
+                <!-- Gradenm Column -->
+                <ng-container matColumnDef="gradenm">
+                    <th mat-header-cell *matHeaderCellDef> Tên Hạng Thẻ </th>
+                    <td mat-cell *matCellDef="let element"> {{element.gradenm}} </td>
+                </ng-container>
+
                   <!-- savetype Column -->
                   <ng-container matColumnDef="savetype">
-                      <th mat-header-cell *matHeaderCellDef> savetype </th>
+                      <th mat-header-cell *matHeaderCellDef> Loại lưu trữ </th>
                       <td mat-cell *matCellDef="let element"> {{element.savetype}} </td>
                   </ng-container>
 
                   <!-- rate Column -->
                   <ng-container matColumnDef="rate">
-                      <th mat-header-cell *matHeaderCellDef>  rate </th>
+                      <th mat-header-cell *matHeaderCellDef>  Tỉ lệ tích lũy </th>
                       <td mat-cell *matCellDef="let element"> {{element.rate }} </td>
                   </ng-container>
   
                   <!-- amount Column -->
                   <ng-container matColumnDef="amount">
-                      <th mat-header-cell *matHeaderCellDef> amount </th>
+                      <th mat-header-cell *matHeaderCellDef> Số lượng </th>
                       <td mat-cell *matCellDef="let element"> {{element.amount}} </td>
                   </ng-container>
   

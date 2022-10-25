@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Router,NavigationEnd  } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -14,6 +13,7 @@ export class PageTitleBoxComponent implements OnInit {
   dataMenu = ELEMENT_DATA;
   menuFilter: any;
   tilte: string = 'Danh sách các hạng thẻ khách hàng';
+  menu: string = 'Phân hạng khách hàng';
   constructor(private http: HttpClient,private router: Router,private location: Location) {
     router.events.subscribe((val) => {
       // see also 
@@ -21,6 +21,7 @@ export class PageTitleBoxComponent implements OnInit {
         this.menuFilter = this.dataMenu.filter(x => x.url === val.url);
         if(this.menuFilter) {
           this.tilte = this.menuFilter[0].tilte;
+          this.menu = this.menuFilter[0].menu;
         }
       }
     });
@@ -37,12 +38,15 @@ export class PageTitleBoxComponent implements OnInit {
 export interface MenuElement {
   url: string;
   tilte: string;
+  menu: string;
 }
 
 const ELEMENT_DATA: MenuElement[] = [
-  {url: '/grade-management/customer-grade-list', tilte: ' Danh sách các hạng thẻ khách hàng'},
-  {url: '/grade-management/customer-grade-detail', tilte: 'Chi tiết hạng thẻ khách hàng'},
-  {url: '/grade-management/grade-information', tilte: 'Thông tin hạng thẻ'},
-  {url: '/grade-management/grade-setting-accumulation', tilte: 'Thiết lập quy tắc tích lũy điểm theo hạng thẻ'},
-  {url: '/grade-management/setting-rule-customer-grade', tilte: 'Cài đặt quy tắc tích lũy cho các hạng thẻ'},
+  {url: '/grade-management/customer-grade-list', tilte: ' Danh sách các hạng thẻ khách hàng',menu: 'Phân hạng khách hàng'},
+  {url: '/grade-management/customer-grade-detail', tilte: 'Chi tiết hạng thẻ khách hàng',menu: 'Phân hạng khách hàng'},
+  {url: '/grade-management/grade-information', tilte: 'Thông tin hạng thẻ',menu: 'Quản lý hạng thẻ'},
+  {url: '/grade-management/grade-setting-accumulation', tilte: 'Thiết lập quy tắc tích lũy điểm theo hạng thẻ',menu: 'Quản lý hạng thẻ'},
+  {url: '/grade-management/setting-rule-customer-grade', tilte: 'Cài đặt quy tắc tích lũy cho các hạng thẻ',menu: 'Quản lý hạng thẻ'},
+  {url: '/grade-promotion/grade-promotion-info', tilte: 'Thông tin chương trình ưu đãi theo hạng thẻ',menu: 'Quản lý ưu đãi hạng thẻ'},
+  {url: '/grade-promotion/setting-rule-grade-promotion', tilte: 'Cài đặt ưu đãi cho các hạng thẻ ',menu: 'Quản lý ưu đãi hạng thẻ'},
 ];

@@ -7,55 +7,63 @@
     <!-- edit mode -->
     <ng-container *ngIf="action!='view'">
       <div class="mb-3">
-        <label for="asscd" class="form-label">asscd</label>
+        <label for="asscd" class="form-label">Đơn vị liên kết</label>
         <input class="form-control" name="asscd" placeholder="asscd" [(ngModel)]="dataGrade.asscd">
       </div>
       <div class="mb-3">
-        <label for="asscd" class="form-label">asscd</label>
-        <input class="form-control" name="asscd" placeholder="asscd" [(ngModel)]="dataGrade.asscd">
-      </div>
-      <div class="mb-3">
-        <label for="startymd" class="form-label">startymd</label>
+        <label for="startymd" class="form-label">Ngày bắt đầu</label>
         <input class="form-control" name="startymd" placeholder="startymd" [(ngModel)]="dataGrade.startymd">
       </div>
       <div class="mb-3">
-        <label for="cycle" class="form-label">cycle</label>
+        <label for="endymd" class="form-label">Ngày kết thúc</label>
+        <input class="form-control" name="endymd" placeholder="endymd" [(ngModel)]="dataGrade.endymd">
+      </div>
+      <div class="mb-3">
+        <label for="baseamount" class="form-label">Số tiền mua hàng tối thiểu</label>
+        <input class="form-control" name="baseamount" placeholder="baseamount" [(ngModel)]="dataGrade.baseamount">
+      </div>
+      <div class="mb-3">
+        <label for="cycle" class="form-label">Thời tháng áp dụng tính lũy (tháng) </label>
         <input class="form-control" name="cycle" placeholder="cycle" [(ngModel)]="dataGrade.cycle">
       </div>
       <div class="mb-3">
-        <label for="period" class="form-label">period</label>
+        <label for="period" class="form-label">Giai đoạn</label>
         <input class="form-control" name="period" placeholder="period" [(ngModel)]="dataGrade.period">
       </div>
       <div class="mb-3">
-        <label for="setupday" class="form-label">setupday</label>
+        <label for="setupday" class="form-label">ngày cài đặt</label>
         <input class="form-control" name="setupday" placeholder="setupday" [(ngModel)]="dataGrade.setupday">
+      </div>
+      <div class="mb-3">
+        <label for="lastsetup" class="form-label">ngày cài đặt cuối cùng</label>
+        <input class="form-control" name="lastsetup" placeholder="lastsetup" [(ngModel)]="dataGrade.lastsetup">
       </div>
     </ng-container>
     <!-- view mode -->
     <ng-container *ngIf="action=='view'">
       <div class="mb-3">
-        <label for="asscd" class="form-label">asscd</label>: {{dataGrade.asscd}}
+        <label for="asscd" class="form-label">Đơn vị liên kết</label>: {{dataGrade.asscd}}
       </div>
       <div class="mb-3">
-        <label for="startymd" class="form-label">startymd</label>: {{dataGrade.startymd}}
+        <label for="startymd" class="form-label">Ngày bắt đầu</label>: {{dataGrade.startymd}}
       </div>
       <div class="mb-3">
-        <label for="endymd" class="form-label">endymd</label>: {{dataGrade.endymd}}
+        <label for="endymd" class="form-label">ngày kết thúc</label>: {{dataGrade.endymd}}
       </div>
       <div class="mb-3">
-        <label for="baseamount" class="form-label">baseamount</label>: {{dataGrade.baseamount}}
+        <label for="baseamount" class="form-label">Số tiền mua hàng tối thiểu</label>: {{dataGrade.baseamount}}
       </div>
       <div class="mb-3">
-        <label for="cycle" class="form-label">cycle</label>: {{dataGrade.cycle}}
+        <label for="cycle" class="form-label">Thời tháng áp dụng tính lũy (tháng) </label>: {{dataGrade.cycle}}
       </div>
       <div class="mb-3">
-        <label for="period" class="form-label">period</label>: {{dataGrade.period}}
+        <label for="period" class="form-label">Giai đoạn</label>: {{dataGrade.period}}
       </div>
       <div class="mb-3">
-        <label for="setupday" class="form-label">setupday</label>: {{dataGrade.setupday}}
+        <label for="setupday" class="form-label">Ngày cài đặt</label>: {{dataGrade.setupday}}
       </div>
       <div class="mb-3">
-        <label for="lastsetup" class="form-label">lastsetup</label>: {{dataGrade.lastsetup}}
+        <label for="lastsetup" class="form-label">ngày cài đặt cuối cùng</label>: {{dataGrade.lastsetup}}
       </div>
     </ng-container>
   </div>

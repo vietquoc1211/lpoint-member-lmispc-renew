@@ -32,6 +32,7 @@ export class CustomerGradeDetailComponent {
   async getData(event:any) {
     this.memberno = event.target.value;
     this.dataDetail = new CustomerGradeDetail(); 
+    this.dataDetail.memberno = this.memberno;
     this.dataHistory = new MatTableDataSource();
     this.spinnerService.show();
     await this.customergradeService.GetCustomerGradeDetail(this.memberno).subscribe(res => {

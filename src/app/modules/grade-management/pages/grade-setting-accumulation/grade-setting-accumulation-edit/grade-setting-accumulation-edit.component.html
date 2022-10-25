@@ -8,27 +8,34 @@
    <ng-container *ngIf="action!='view'">
       <div class="mb-3">
           <label for="gradecd" class="form-label">Đơn vị liên kết</label>
-          <input class="form-control" name="gradecd" placeholder="Mã hạng thẻ" [(ngModel)]="dataSetting.asscd" >
+          <select class="form-select form-select-grade mb-3" aria-label=".form-select-grade" [value]="dataSetting.asscd" [(ngModel)]="dataSetting.asscd" [disabled]="action!='add'">
+            <option value="LV01">Lotte Mart</option>
+            <option value="LV02">Lotte Cinema</option>
+            <option value="LV03">LOTTERIA</option>
+            <option value="LV04">Lotte Homeshopping</option>  
+            <option value="LV05">Lotte Department Store</option> 
+          </select>      
       </div>
       <div class="mb-3">
-          <label for="gradenm" class="form-label">Tên hạng thẻ</label>
-          <input class="form-control" name="gradenm" placeholder="Tên hạng thẻ" [(ngModel)]="dataSetting.gradecd">
+        <label for="gradecd" class="form-label">Mã hạng thẻ</label>
+        <select class="form-select form-select-grade mb-3" aria-label=".form-select-grade" [value]="dataSetting.gradecd" [(ngModel)]="dataSetting.gradecd" [disabled]="action!='add'">
+          <option value="G001">Platinum</option>
+          <option value="G002">Gold</option>
+          <option value="G003">Sivel</option>
+          <option value="G004">G004</option>  
+        </select>      
       </div>
       <div class="mb-3">
         <label for="gradenm" class="form-label">savetype</label>
         <input class="form-control" name="savetype" placeholder="Tên hạng thẻ" [(ngModel)]="dataSetting.savetype">
       </div>
       <div class="mb-3">
-        <label for="Rate" class="form-label">Rate</label>
+        <label for="Rate" class="form-label">Tỉ lệ tích lũy </label>
         <input class="form-control" name="Rate" placeholder="Rate" [(ngModel)]="dataSetting.rate">
       </div>
       <div class="mb-3">
         <label for="amount" class="form-label">amount</label>
         <input class="form-control" name="amount" placeholder="amount" [(ngModel)]="dataSetting.amount">
-      </div>
-      <div class="mb-3">
-        <label for="insymd" class="form-label">insymd</label>
-        <input class="form-control" name="insymd" placeholder="insymd" [(ngModel)]="dataSetting.insymd">
       </div>
    </ng-container>
    <!-- view mode -->
@@ -37,13 +44,16 @@
           <label for="gradecd" class="form-label">Đơn vị liên kết</label>: {{dataSetting.asscd}}
       </div>
       <div class="mb-3">
-          <label for="gradenm" class="form-label">Tên hạng thẻ</label> : {{dataSetting.gradecd}}
+        <label for="gradecd" class="form-label">Mã hạng thẻ</label> : {{dataSetting.gradecd}}
+      </div>
+      <div class="mb-3">
+          <label for="gradenm" class="form-label">Tên hạng thẻ</label> : {{dataSetting.gradenm}}
       </div>
       <div class="mb-3">
         <label for="gradenm" class="form-label">savetype</label> : {{dataSetting.savetype}}
       </div>
       <div class="mb-3">
-        <label for="fromcnt" class="form-label">rate</label>: {{dataSetting.rate}}
+        <label for="fromcnt" class="form-label">Tỉ lệ tích lũy </label>: {{dataSetting.rate}}
       </div>
       <div class="mb-3">
         <label for="tocnt" class="form-label">amount</label>: {{dataSetting.amount}}
