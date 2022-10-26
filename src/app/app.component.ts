@@ -14,7 +14,10 @@ export class AppComponent implements OnInit {
     private router: Router,
     private authenticationService: AuthenticationService
   ) {
-    this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+    this.authenticationService.currentUser.subscribe(x => 
+      this.currentUser = x
+    );
+    // if (this.authenticationService.currentUserValue?.token)
    }
 
   ngOnInit(): void {

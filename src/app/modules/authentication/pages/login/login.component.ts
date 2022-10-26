@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     private _Toastr: ToastrService
   ) {
     //redirect to home if already logged in
-    if (this.authenticationService.currentUserValue) {
+    if (this.authenticationService.currentUserValue?.token) {
       this.router.navigate(['/dashboards']);
     }
   }

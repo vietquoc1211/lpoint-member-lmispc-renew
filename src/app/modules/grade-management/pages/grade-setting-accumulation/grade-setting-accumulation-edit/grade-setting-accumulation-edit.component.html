@@ -26,15 +26,15 @@
         </select>      
       </div>
       <div class="mb-3">
-        <label for="gradenm" class="form-label">savetype</label>
-        <input class="form-control" name="savetype" placeholder="Tên hạng thẻ" [(ngModel)]="dataSetting.savetype">
+        <label for="gradenm" class="form-label">Kiểu lưu trữ</label>
+        <input class="form-control" name="savetype" placeholder="Tên hạng thẻ" [(ngModel)]="dataSetting.savetype" maxlength="2">
       </div>
       <div class="mb-3">
         <label for="Rate" class="form-label">Tỉ lệ tích lũy </label>
         <input class="form-control" name="Rate" placeholder="Rate" [(ngModel)]="dataSetting.rate">
       </div>
       <div class="mb-3">
-        <label for="amount" class="form-label">amount</label>
+        <label for="amount" class="form-label">Số tiền tối thiểu</label>
         <input class="form-control" name="amount" placeholder="amount" [(ngModel)]="dataSetting.amount">
       </div>
    </ng-container>
@@ -50,16 +50,16 @@
           <label for="gradenm" class="form-label">Tên hạng thẻ</label> : {{dataSetting.gradenm}}
       </div>
       <div class="mb-3">
-        <label for="gradenm" class="form-label">savetype</label> : {{dataSetting.savetype}}
+        <label for="gradenm" class="form-label">Kiểu lưu trữ</label> : {{dataSetting.savetype}}
       </div>
       <div class="mb-3">
         <label for="fromcnt" class="form-label">Tỉ lệ tích lũy </label>: {{dataSetting.rate}}
       </div>
       <div class="mb-3">
-        <label for="tocnt" class="form-label">amount</label>: {{dataSetting.amount}}
+        <label for="tocnt" class="form-label">Số tiền tối thiểu</label>: {{dataSetting.amount}}
       </div>
       <div class="mb-3">
-        <label for="tocnt" class="form-label">insymd</label>: {{dataSetting.insymd}}
+        <label for="tocnt" class="form-label">Ngày tạo</label>: {{dataSetting.insymd}}
       </div>
   </ng-container>
   </div>

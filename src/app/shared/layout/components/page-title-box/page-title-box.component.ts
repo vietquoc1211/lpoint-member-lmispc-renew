@@ -19,7 +19,7 @@ export class PageTitleBoxComponent implements OnInit {
       // see also 
       if(val instanceof NavigationEnd) {
         this.menuFilter = this.dataMenu.filter(x => x.url === val.url);
-        if(this.menuFilter) {
+        if(this.menuFilter[0]) {
           this.tilte = this.menuFilter[0].tilte;
           this.menu = this.menuFilter[0].menu;
         }

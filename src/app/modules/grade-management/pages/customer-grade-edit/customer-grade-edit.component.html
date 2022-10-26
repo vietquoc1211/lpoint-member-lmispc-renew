@@ -20,6 +20,10 @@
                   <option value="G003">Sivel</option>
             </select>
         </div>
+        <div class="mb-3">
+            <label for="updreason" class="form-label">Lý do thay đổi hạng <span> *</span></label>
+            <input class="form-control" name="updreason" placeholder="Lý do thay đổi hạng" [(ngModel)]="dataGrade.updreason" [required]>
+        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-light" data-bs-dismiss="modal" (click)="closeDialog()">Close</button>

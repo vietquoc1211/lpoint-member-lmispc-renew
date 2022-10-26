@@ -8,15 +8,21 @@
     <ng-container *ngIf="action!='view'">
       <div class="mb-3">
         <label for="asscd" class="form-label">Đơn vị liên kết</label>
-        <input class="form-control" name="asscd" placeholder="asscd" [(ngModel)]="dataGrade.asscd">
+        <select class="form-select form-select-grade mb-3" aria-label=".form-select-grade" [value]="dataGrade.asscd" [(ngModel)]="dataGrade.asscd" [disabled]="action!='add'">
+          <option value="LV01">Lotte Mart</option>
+          <option value="LV02">Lotte Cinema</option>
+          <option value="LV03">LOTTERIA</option>
+          <option value="LV04">Lotte Homeshopping</option>  
+          <option value="LV05">Lotte Department Store</option> 
+        </select>   
       </div>
       <div class="mb-3">
         <label for="startymd" class="form-label">Ngày bắt đầu</label>
-        <input class="form-control" name="startymd" placeholder="startymd" [(ngModel)]="dataGrade.startymd">
+        <input class="form-control" name="startymd" placeholder="YYYYMMDD" [(ngModel)]="dataGrade.startymd">
       </div>
       <div class="mb-3">
         <label for="endymd" class="form-label">Ngày kết thúc</label>
-        <input class="form-control" name="endymd" placeholder="endymd" [(ngModel)]="dataGrade.endymd">
+        <input class="form-control" name="endymd" placeholder="YYYYMMDD" [(ngModel)]="dataGrade.endymd">
       </div>
       <div class="mb-3">
         <label for="baseamount" class="form-label">Số tiền mua hàng tối thiểu</label>
@@ -24,25 +30,32 @@
       </div>
       <div class="mb-3">
         <label for="cycle" class="form-label">Thời tháng áp dụng tính lũy (tháng) </label>
-        <input class="form-control" name="cycle" placeholder="cycle" [(ngModel)]="dataGrade.cycle">
+        <input class="form-control" name="cycle" placeholder="Thời tháng áp dụng tính lũy (tháng)" [(ngModel)]="dataGrade.cycle">
       </div>
       <div class="mb-3">
         <label for="period" class="form-label">Giai đoạn</label>
-        <input class="form-control" name="period" placeholder="period" [(ngModel)]="dataGrade.period">
+        <input class="form-control" name="period" placeholder="Giai đoạn" [(ngModel)]="dataGrade.period">
       </div>
       <div class="mb-3">
         <label for="setupday" class="form-label">ngày cài đặt</label>
-        <input class="form-control" name="setupday" placeholder="setupday" [(ngModel)]="dataGrade.setupday">
+        <input class="form-control" name="setupday" placeholder="DD" [(ngModel)]="dataGrade.setupday" maxlength="2">
       </div>
       <div class="mb-3">
         <label for="lastsetup" class="form-label">ngày cài đặt cuối cùng</label>
-        <input class="form-control" name="lastsetup" placeholder="lastsetup" [(ngModel)]="dataGrade.lastsetup">
+        <input class="form-control" name="lastsetup" placeholder="YYYYMMDD" [(ngModel)]="dataGrade.lastsetup">
       </div>
     </ng-container>
     <!-- view mode -->
     <ng-container *ngIf="action=='view'">
       <div class="mb-3">
-        <label for="asscd" class="form-label">Đơn vị liên kết</label>: {{dataGrade.asscd}}
+        <label for="asscd" class="form-label">Đơn vị liên kết</label>: 
+        <select class="form-select form-select-grade mb-3" aria-label=".form-select-grade" [value]="dataGrade.asscd" [(ngModel)]="dataGrade.asscd" [disabled]="true">
+          <option value="LV01">Lotte Mart</option>
+          <option value="LV02">Lotte Cinema</option>
+          <option value="LV03">LOTTERIA</option>
+          <option value="LV04">Lotte Homeshopping</option>  
+          <option value="LV05">Lotte Department Store</option> 
+        </select>   
       </div>
       <div class="mb-3">
         <label for="startymd" class="form-label">Ngày bắt đầu</label>: {{dataGrade.startymd}}

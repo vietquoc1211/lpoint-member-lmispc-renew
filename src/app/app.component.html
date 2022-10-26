@@ -1,10 +1,10 @@
 
 
-<div *ngIf="!currentUser">
+<div *ngIf="!currentUser?.token">
     <router-outlet></router-outlet>
 </div>
 <!-- Begin page -->
-<div class="wrapper" *ngIf="currentUser">
+<div class="wrapper" *ngIf="currentUser?.token">
 
     <!-- ========== Left Sidebar Start ========== -->
     <app-leftside-menu></app-leftside-menu>

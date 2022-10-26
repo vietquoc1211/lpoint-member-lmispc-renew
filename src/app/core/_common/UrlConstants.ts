@@ -3,7 +3,7 @@ export class UrlConstants {
   //local
   // public static BASE_URL: 'http://localhost:5119/api/'
   // deploy
-  public static BASE_URL =  'http://localhost:8080/api/';
+  public static BASE_URL =  'http://localhost:5119/api/';
   public static LOGIN = '/login';
   public static HOME = '/';
   public static ACCESSDENIED = '/page-406';

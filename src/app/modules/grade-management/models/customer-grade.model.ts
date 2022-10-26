@@ -9,6 +9,7 @@ export class CustomerGrade {
     usegbn: string = '';
     transcnt: string = '';
     point: string = '';
+    updreason: string = '';
 }
 
 export class CustomerGradeSearch {
