@@ -307,12 +307,12 @@
                     [
                         {
                             "pageTitle": "Thông tin chương trình ưu đãi theo hạng thẻ ",
-                            "routerLink": "/grade-promotion/grade-promotion-info",
+                            "routerLink": "/grade-management/grade-promotion-info",
                             "icon": ""
                         },
                         {
                             "pageTitle": "Cài đặt ưu đãi cho các hạng thẻ ",
-                            "routerLink": "/grade-promotion/setting-rule-grade-promotion",
+                            "routerLink": "/grade-management/grade-promotion-setting",
                             "icon": ""
                         }
                     ]

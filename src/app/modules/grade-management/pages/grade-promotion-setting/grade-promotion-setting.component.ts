@@ -4,17 +4,18 @@ import { MatTableDataSource } from '@angular/material/table';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from '../../../../shared/component/confirmation-dialog/confirmation-dialog.component';
-import { GradePromotionInfoService } from "../../services/grade-promotion-info.service";
+import { GradePromotionSettingService } from "../../services/grade-promotion-setting.service";
 import { MessageConstants } from 'src/app/core/_common/messageConstants';
 import { ToastrService } from 'ngx-toastr';
-import { GradePromotionInfoEditComponent } from './grade-promotion-info-edit/grade-promotion-info-edit.component';
+import { GradePromotionSettingEditComponent } from './grade-promotion-setting-edit/grade-promotion-setting-edit.component';
+
 @Component ({
-    selector: "grade-promotion-info",
-    templateUrl: './grade-promotion-info.component.html',
-    styleUrls: ['./grade-promotion-info.component.css']
+    selector: "grade-promotion-setting",
+    templateUrl: './grade-promotion-setting.component.html',
+    styleUrls: ['./grade-promotion-setting.component.css']
 })
 
-export class GradePromotionInfoComponent {
+export class GradePromotionSettingComponent {
     dataGrade: any;
     isLoading = false;
     totalRows = 1000;
@@ -22,11 +23,11 @@ export class GradePromotionInfoComponent {
     currentPage = 1;
     pageSizeOptions: number[] = [10,25,50,100];
     dataSource = new MatTableDataSource();
-    displayedColumns = ['stt','asscd','gradecd','gradenm','startymd', 'endymd','cycle','status','accumulate_point','ratio_accumulate_point','discount','ratio_discount','note','insymd','action'];
+    displayedColumns = ['stt','asscd','gradecd','gradenm', 'startymd', 'endymd','amount','note','insymd','action'];
     @ViewChild(MatPaginator)
     paginator!: MatPaginator;
 
-    constructor(private settingService: GradePromotionInfoService,
+    constructor(private settingService: GradePromotionSettingService,
         private spinnerService: NgxSpinnerService,
         public dialog: MatDialog,
         private _Toastr: ToastrService
@@ -52,13 +53,13 @@ export class GradePromotionInfoComponent {
     }
     
     onShowDialogSetting(action: string, data: any) {
-      let dialogRef = this.dialog.open(GradePromotionInfoEditComponent, {
+      let dialogRef = this.dialog.open(GradePromotionSettingEditComponent, {
         data: {
           data: data,
           action: action
         },
         width: '600px',
-        height: '700px',
+        height: '600px',
         disableClose: true,
         panelClass: 'custom-modalbox'
       });

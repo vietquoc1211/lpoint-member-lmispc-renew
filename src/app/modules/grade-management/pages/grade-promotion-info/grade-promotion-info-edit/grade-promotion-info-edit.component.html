@@ -1,0 +1,126 @@
+<form #gradeinfoForm="ngForm">
+  <div class="modal-content">
+    <div class="modal-header modal-colored-header bg-info">
+      <h4 class="modal-title" id="info-header-modalLabel">Thông tin cài đặt ưu đãi cho các hạng thẻ </h4>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" (click)="closeDialog()"></button>
+    </div>
+    <div class="modal-body">
+      <!-- edit mode -->
+      <ng-container *ngIf="action!='view'">
+        <!-- Đơn Vị Liên Kết-->
+        <div class="mb-3">
+          <label for="asscd" class="form-label">Đơn vị liên kết</label>
+          <select class="form-select form-select-grade mb-3" aria-label=".form-select-grade"  name="asscd"
+              [value]="dataGrade.asscd" [(ngModel)]="dataGrade.asscd" [disabled]="action!='add'">
+            <option value="LV01">Lotte Mart</option>
+            <option value="LV02">Lotte Cinema</option>
+            <option value="LV03">LOTTERIA</option>
+            <option value="LV04">Lotte Homeshopping</option>  
+            <option value="LV05">Lotte Department Store</option> 
+          </select>     
+        </div>
+        <div class="mb-3">
+          <label for="gradecd" class="form-label required">Phân loại hạng</label>
+          <select class="form-select form-select-grade mb-3" aria-label=".form-select-grade" [(ngModel)]="dataGrade.gradecd" name="gradecd" [disabled]="action!='add'">
+            <option value="G001">Platinum</option>
+            <option value="G002">Gold</option>
+            <option value="G003">Sivel</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="startymd" class="form-label">Ngày bắt đầu</label>
+          <input class="form-control" name="startymd" placeholder="YYYYMMDD" [(ngModel)]="dataGrade.startymd">
+        </div>
+        <div class="mb-3">
+          <label for="endymd" class="form-label">Ngày kết thúc</label>
+          <input class="form-control" name="endymd" placeholder="YYYYMMDD" [(ngModel)]="dataGrade.endymd">
+        </div>
+        <div class="mb-3">
+          <label for="amount" class="form-label">Thời gian áp dụng tích lũy (Tháng)</label> : {{dataGrade.cycle}}
+        </div>
+        <div class="mb-3">
+          <div class="form-check form-checkbox-success mb-2">
+            <input type="checkbox" class="form-check-input" name="status" checked [(ngModel)]="dataGrade.status">
+            <label class="form-check-label" for="status">Active status</label>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="amount" class="form-label">Loại ưu đãi</label> 
+          <div class="form-check form-checkbox-success mb-2">
+            <input type="checkbox" class="form-check-input" name="accumulate_point" checked [(ngModel)]="dataGrade.accumulate_point">
+            <label class="form-check-label" for="accumulate_point">Tỷ lệ tích điểm</label>
+          </div>
+          <input class="form-control" name="ratio_accumulate_point" placeholder="Tỷ lệ" [(ngModel)]="dataGrade.ratio_accumulate_point">
+
+          <div class="form-check form-checkbox-success mb-2">
+            <input type="checkbox" class="form-check-input" name="discount" checked [(ngModel)]="dataGrade.discount">
+            <label class="form-check-label" for="discount">Tỷ lệ giảm giá</label>
+          </div>
+          <input class="form-control" name="ratio_discount" placeholder="Tỷ lệ" [(ngModel)]="dataGrade.ratio_discount">
+
+        </div>
+        <div class="mb-3">
+          <label for="cycle" class="form-label">Ghi chú</label>
+          <input class="form-control" name="cycle" placeholder="Ghi chú" [(ngModel)]="dataGrade.note">
+        </div>
+      </ng-container>
+      <!-- view mode -->
+      <ng-container *ngIf="action=='view'">
+        <div class="mb-3">
+          <label for="asscd" class="form-label">Đơn vị liên kết</label>
+          <select class="form-select form-select-grade mb-3" name="asscd" aria-label=".form-select-grade" [value]="dataGrade.asscd" [(ngModel)]="dataGrade.asscd" [disabled]="true">
+            <option value="LV01">Lotte Mart</option>
+            <option value="LV02">Lotte Cinema</option>
+            <option value="LV03">LOTTERIA</option>
+            <option value="LV04">Lotte Homeshopping</option>  
+            <option value="LV05">Lotte Department Store</option> 
+          </select>     
+        </div>
+        <div class="mb-3">
+          <label for="gradecd" class="form-label required">Phân loại hạng</label>
+          <select class="form-select form-select-grade mb-3" aria-label=".form-select-grade" [(ngModel)]="dataGrade.gradecd" [disabled]="true" name="gradecd">
+            <option value="G001">Platinum</option>
+            <option value="G002">Gold</option>
+            <option value="G003">Sivel</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="startymd" class="form-label">Ngày bắt đầu</label>: {{dataGrade.startymd}}
+        </div>
+        <div class="mb-3">
+          <label for="endymd" class="form-label">Ngày kết thúc</label> : {{dataGrade.endymd}}
+        </div>
+        <div class="mb-3">
+          <label for="amount" class="form-label">Thời gian áp dụng tích lũy (Tháng)</label> : {{dataGrade.cycle}}
+        </div>
+        <div class="mb-3">
+          <label for="amount" class="form-label">Active status</label> : {{dataGrade.status}}
+        </div>
+        <div class="mb-3">
+          <label for="amount" class="form-label">Loại ưu đãi</label> 
+          <div class="form-check form-checkbox-success mb-2">
+            <input type="checkbox" class="form-check-input" name="ftpsend" checked [(ngModel)]="dataGrade.ratio_accumulate_point">
+            <label class="form-check-label" for="ftpsend">Tỷ lệ tích điểm</label>
+            <label for="ratio_accumulate_point" class="form-label">Tỉ lệ:</label> : {{dataGrade.ratio_accumulate_point}}
+          </div>
+
+          <div class="form-check form-checkbox-success mb-2">
+            <input type="checkbox" class="form-check-input" name="ftpsend" checked [(ngModel)]="dataGrade.discount">
+            <label class="form-check-label" for="ftpsend">Tỷ lệ giảm giá</label>
+            <label for="ratio_discount" class="form-label">Tỉ lệ:</label> : {{dataGrade.ratio_discount}}
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="cycle" class="form-label">Ghi chú</label>: {{dataGrade.note}}
+        </div>
+      </ng-container>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" data-bs-dismiss="modal" (click)="closeDialog()">Close</button>
+      <button type="button" class="btn btn-info" *ngIf="action!='view'" [disabled]="gradeinfoForm.invalid"
+        (click)="onSave()">Save changes</button>
+    </div>
+  </div><!-- /.modal-content -->
+</form>

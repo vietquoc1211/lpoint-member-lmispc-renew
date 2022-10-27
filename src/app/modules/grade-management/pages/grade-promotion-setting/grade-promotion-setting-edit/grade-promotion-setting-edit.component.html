@@ -1,0 +1,88 @@
+<form #gradeinfoForm="ngForm">
+  <div class="modal-content">
+    <div class="modal-header modal-colored-header bg-info">
+      <h4 class="modal-title" id="info-header-modalLabel">Thông tin cài đặt ưu đãi cho các hạng thẻ </h4>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" (click)="closeDialog()"></button>
+    </div>
+    <div class="modal-body">
+      <!-- edit mode -->
+      <ng-container *ngIf="action!='view'">
+        <!-- Đơn Vị Liên Kết-->
+        <div class="mb-3">
+          <label for="asscd" class="form-label">Đơn vị liên kết</label>
+          <select class="form-select form-select-grade mb-3" aria-label=".form-select-grade"  name="asscd"
+              [value]="dataGrade.asscd" [(ngModel)]="dataGrade.asscd" [disabled]="action!='add'">
+            <option value="LV01">Lotte Mart</option>
+            <option value="LV02">Lotte Cinema</option>
+            <option value="LV03">LOTTERIA</option>
+            <option value="LV04">Lotte Homeshopping</option>  
+            <option value="LV05">Lotte Department Store</option> 
+          </select>     
+        </div>
+        <div class="mb-3">
+          <label for="gradecd" class="form-label required">Phân loại hạng</label>
+          <select class="form-select form-select-grade mb-3" aria-label=".form-select-grade" [(ngModel)]="dataGrade.gradecd" name="gradecd" [disabled]="action!='add'">
+            <option value="G001">Platinum</option>
+            <option value="G002">Gold</option>
+            <option value="G003">Sivel</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="startymd" class="form-label">Ngày bắt đầu</label>
+          <input class="form-control" name="startymd" placeholder="YYYYMMDD" [(ngModel)]="dataGrade.startymd">
+        </div>
+        <div class="mb-3">
+          <label for="endymd" class="form-label">Ngày kết thúc</label>
+          <input class="form-control" name="endymd" placeholder="YYYYMMDD" [(ngModel)]="dataGrade.endymd">
+        </div>
+        <div class="mb-3">
+          <label for="amount" class="form-label">Số tiền khuyến mãi</label>
+          <input class="form-control" name="amount" placeholder="amount" [(ngModel)]="dataGrade.amount">
+        </div>
+        <div class="mb-3">
+          <label for="cycle" class="form-label">Ghi chú</label>
+          <input class="form-control" name="cycle" placeholder="Ghi chú" [(ngModel)]="dataGrade.note">
+        </div>
+      </ng-container>
+      <!-- view mode -->
+      <ng-container *ngIf="action=='view'">
+        <div class="mb-3">
+          <label for="asscd" class="form-label">Đơn vị liên kết</label>
+          <select class="form-select form-select-grade mb-3" name="asscd" aria-label=".form-select-grade" [value]="dataGrade.asscd" [(ngModel)]="dataGrade.asscd" [disabled]="true">
+            <option value="LV01">Lotte Mart</option>
+            <option value="LV02">Lotte Cinema</option>
+            <option value="LV03">LOTTERIA</option>
+            <option value="LV04">Lotte Homeshopping</option>  
+            <option value="LV05">Lotte Department Store</option> 
+          </select>     
+        </div>
+        <div class="mb-3">
+          <label for="gradecd" class="form-label required">Phân loại hạng</label>
+          <select class="form-select form-select-grade mb-3" aria-label=".form-select-grade" [(ngModel)]="dataGrade.gradecd" [disabled]="true" name="gradecd">
+            <option value="G001">Platinum</option>
+            <option value="G002">Gold</option>
+            <option value="G003">Sivel</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="startymd" class="form-label">Ngày bắt đầu</label>: {{dataGrade.startymd}}
+        </div>
+        <div class="mb-3">
+          <label for="endymd" class="form-label">Ngày kết thúc</label> : {{dataGrade.endymd}}
+        </div>
+        <div class="mb-3">
+          <label for="amount" class="form-label">Số tiền khuyến mãi</label> : {{dataGrade.amount}}
+        </div>
+        <div class="mb-3">
+          <label for="cycle" class="form-label">Ghi chú</label>: {{dataGrade.note}}
+        </div>
+      </ng-container>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" data-bs-dismiss="modal" (click)="closeDialog()">Close</button>
+      <button type="button" class="btn btn-info" *ngIf="action!='view'" [disabled]="gradeinfoForm.invalid"
+        (click)="onSave()">Save changes</button>
+    </div>
+  </div><!-- /.modal-content -->
+</form>

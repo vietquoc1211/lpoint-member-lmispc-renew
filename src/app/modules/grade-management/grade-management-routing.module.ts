@@ -26,7 +26,14 @@ const routes: Routes = [
       },
       {
         "path" : "setting-rule-customer-grade","component" : _grade.SettingRuleCustomerGradeComponent, canActivate: [AuthGuard] 
-      }
+      },
+      // Grade Promotion
+      {
+        "path": "grade-promotion-info", "component": _grade.GradePromotionInfoComponent, canActivate: [AuthGuard] 
+      },
+      {
+        "path": "grade-promotion-setting", "component": _grade.GradePromotionSettingComponent, canActivate: [AuthGuard] 
+      }  
     ]
   }
 ];

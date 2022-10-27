@@ -23,7 +23,10 @@ import { MatTableExporterModule } from 'mat-table-exporter';
         _grade.CustomerGradeDetailComponent,
         _grade.CustomerGradeDetailDialogComponent,
         _grade.CustomerGradeEditComponent,
-
+        _grade.GradePromotionSettingComponent,
+        _grade.GradePromotionSettingEditComponent,
+        _grade.GradePromotionInfoComponent,
+        _grade.GradePromotionInfoEditComponent,
         // grade management
         _grade.GradeInfomationComponent,
         _grade.GradeInfomationEditComponent,
