@@ -43,6 +43,7 @@ export class CustomerGradeDetail {
     phuongxa: string = '';
     haddress: string = '';
     gradecd: string = '';
+    gradenm: string = '';
     startymd: string = '';
     endymd: string = '';
     transcnt: string = '';

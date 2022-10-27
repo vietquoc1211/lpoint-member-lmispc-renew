@@ -169,17 +169,4 @@ export class CustomerGradeListComponent implements OnInit {
       }
     });
   }
-
-  Changedate(e:any) {
-    // if (e)
-    //   if (this.formdata.controls.NgayBatDau.value > this.formdata.controls.NgayKetThuc.value) {
-    //     this.openPicker();
-    //   }
-    // this.minDate = new Date(this.formdata.controls.NgayBatDau.value);
-  }
-
-  openPicker() {
-    this.dp1.open();
-  }
-
 }

@@ -91,8 +91,11 @@
 
                             <div class="mb-3">
                                 <label class="form-label">Phân loại hạng tương ứng của khách hàng</label>
-                                <input type="text" class="form-control" name="gradenm" placeholder="Phân loại hạng"
-                                    [(ngModel)]="dataDetail.gradecd" [readonly]="true">
+                                <select class="form-select form-select-grade mb-3" aria-label=".form-select-grade" [value]="dataDetail.gradecd" [(ngModel)]="dataDetail.gradecd" [disabled]="true">
+                                    <option value="G001">Platinum</option>
+                                    <option value="G002">Gold</option>
+                                    <option value="G003">Sivel</option>
+                                </select>
                             </div>
 
                             <div class="mb-3">

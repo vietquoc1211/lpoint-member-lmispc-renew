@@ -1,24 +1,15 @@
 import { HttpClient } from '@angular/common/http';
-import { ChangeDetectorRef, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { filter, Observable } from 'rxjs';
-import { NavigationEnd, Router } from '@angular/router';
-
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-leftside-menu',
   templateUrl: './leftside-menu.component.html',
   styleUrls: ['./leftside-menu.component.css']
 })
 export class LeftsideMenuComponent implements OnInit {
-  dataMenu: any;
-  @ViewChild('asideMenu', {static: true}) asideMenu?: ElementRef;
-  
-	currentRouteUrl = '';
-	insideTm: any;
-	outsideTm: any;
+  dataMenu: any;  
 
-  constructor(private http: HttpClient,	private router: Router, 
-    private render: Renderer2,
-    private cdr: ChangeDetectorRef) {
+  constructor(private http: HttpClient) {
     this.getJSON().subscribe(data => {
       this.dataMenu = data.dataMenu;
     });
@@ -26,16 +17,7 @@ export class LeftsideMenuComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.currentRouteUrl = this.router.url.split(/[?#]/)[0];
-
-		this.router.events
-			.pipe(filter(event => event instanceof NavigationEnd))
-			.subscribe(event => {
-				this.currentRouteUrl = this.router.url.split(/[?#]/)[0];
-				this.cdr.markForCheck();
-			});
-			this.render.setAttribute(this.asideMenu?.nativeElement, 'data-ktmenu-dropdown', '1');
-			// tslint:disable-next-line:max-line-length
+  
   }
 
   public getJSON(): Observable<any> {
