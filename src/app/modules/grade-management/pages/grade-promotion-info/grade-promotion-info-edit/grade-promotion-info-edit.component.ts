@@ -40,6 +40,7 @@ export class GradePromotionInfoEditComponent {
                     this.dialogRef.close(this.dataGrade);
                 },
                 error: (error) => {
+                    this._Toastr.error('Thông tin đã tồn tại không thể thêm mới.');
                 }
             });    
         } else if (this.dataGrade.gradecd) {
@@ -48,6 +49,7 @@ export class GradePromotionInfoEditComponent {
                     this.dialogRef.close(this.dataGrade);
                 },
                 error: (error) => {
+                    this._Toastr.error('Không cập nhật được thông tin!');
                 }
             }); 
         }
