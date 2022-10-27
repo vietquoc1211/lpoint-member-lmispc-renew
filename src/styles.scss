@@ -3204,6 +3204,11 @@ td.mat-footer-cell {
   cursor: pointer;
 }
 
+.required:after {
+  content:" *";
+  color: red;
+}
+
 @media screen and (max-width: 600px) {
   .mat-paginator-range-label {
     margin: 0;

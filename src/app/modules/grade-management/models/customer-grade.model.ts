@@ -48,4 +48,5 @@ export class CustomerGradeDetail {
     transcnt: string = '';
     point: string = '';
     usegbn: string = '';
+    updreason: string = '';
 }

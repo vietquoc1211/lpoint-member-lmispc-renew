@@ -8,7 +8,7 @@
       <!-- edit mode -->
       <ng-container *ngIf="action!='view'">
         <div class="mb-3">
-          <label for="gradecd" class="form-label">Mã hạng thẻ</label>
+          <label for="gradecd" class="form-label required">Mã hạng thẻ</label>
           <input class="form-control" name="gradecd" required minlength="4" placeholder="Mã hạng thẻ"
             [(ngModel)]="dataGrade.gradecd" #gradecd="ngModel">
           <div *ngIf="gradecd.invalid && (gradecd.dirty || gradecd.touched)" class="alert alert-danger">
@@ -22,7 +22,7 @@
         </div>
 
         <div class="mb-3">
-          <label for="gradenm" class="form-label">Tên hạng thẻ</label>
+          <label for="gradenm" class="form-label required">Tên hạng thẻ</label>
           <input class="form-control" name="gradenm" required placeholder="Tên hạng thẻ" [(ngModel)]="dataGrade.gradenm"
             #gradenm="ngModel">
           <div *ngIf="gradenm.invalid && (gradenm.dirty || gradenm.touched)" class="alert alert-danger">

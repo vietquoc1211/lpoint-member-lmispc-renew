@@ -13,7 +13,7 @@ import { CustomerGradeService } from "../../services/customer-grade.service";
 })
 export class  CustomerGradeDetailDialogComponent {
   dataDetail: CustomerGradeDetail = new CustomerGradeDetail();
-  displayedColumns = ['memberno', 'asscd', 'gradenm','startymd', 'endymd', 'usegbn', 'point'];
+  displayedColumns = ['memberno', 'asscd', 'gradenm','startymd', 'endymd', 'usegbn', 'point','updreason'];
   dataHistory = new MatTableDataSource();
   memberno: string = '';
   constructor(private customergradeService: CustomerGradeService,
