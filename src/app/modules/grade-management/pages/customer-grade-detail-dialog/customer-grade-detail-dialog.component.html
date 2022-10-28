@@ -94,7 +94,7 @@
                                 <select class="form-select form-select-grade mb-3" aria-label=".form-select-grade" [value]="dataDetail.gradecd" [(ngModel)]="dataDetail.gradecd" [disabled]="true">
                                     <option value="G001">Platinum</option>
                                     <option value="G002">Gold</option>
-                                    <option value="G003">Sivel</option>
+                                    <option value="G003">Silver</option>
                                 </select>
                             </div>
 
@@ -143,16 +143,6 @@
                                                 <th mat-header-cell *matHeaderCellDef> Phân loại hạng </th>
                                                 <td mat-cell *matCellDef="let element"> {{element.gradenm}} </td>
                                             </ng-container>
-                                            <!-- Point Column -->
-                                            <!-- <ng-container matColumnDef="workymd">
-                                                <th mat-header-cell *matHeaderCellDef> Số điểm tích lũy </th>
-                                                <td mat-cell *matCellDef="let element"> {{element.workymd }} </td>
-                                            </ng-container> -->
-                                            <!-- Point Column -->
-                                            <!-- <ng-container matColumnDef="worktime">
-                                                    <th mat-header-cell *matHeaderCellDef> Số điểm tích lũy </th>
-                                                    <td mat-cell *matCellDef="let element"> {{element.worktime }} </td>
-                                            </ng-container> -->
 
                                             <!-- startymd Column -->
                                             <ng-container matColumnDef="startymd">
@@ -179,7 +169,7 @@
 
                                             <!-- point Column -->
                                             <ng-container matColumnDef="point">
-                                                <th mat-header-cell *matHeaderCellDef> Quá trình kiểm tra </th>
+                                                <th mat-header-cell *matHeaderCellDef> Số điểm tích lũy </th>
                                                 <td mat-cell *matCellDef="let element"> {{element.point}} </td>
                                             </ng-container>
 
