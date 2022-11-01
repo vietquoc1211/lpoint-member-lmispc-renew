@@ -11,6 +11,7 @@ import { Page500Component } from './modules/error/page500/page500.component';
 const routes: Routes = [
   {
     path: 'analysis',
+    canActivate: [AuthGuard],
     loadChildren: () => import('./modules/analysis/analysis.module').then((m) => m.AnalysisModule),
   },
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
   },
   {
     path: 'grade-management',
+    canActivate: [AuthGuard],
     loadChildren: () => import('./modules/grade-management/grade-management.module').then((m) => m.GradeManagementModule),
   },
   {

@@ -1,25 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from './core/_services';
 import { User } from './core/_models';
-import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
   title = 'LMIS';
-  currentUser?: User;
+  currentUser?: User| null;
 
   constructor(
-    private router: Router,
-    private authenticationService: AuthenticationService
+    private authService: AuthenticationService
   ) {
-    this.authenticationService.currentUser.subscribe(x => 
+    this.authService.currentUser.subscribe(x => 
       this.currentUser = x
     );
    }
 
   ngOnInit(): void {
+
   }
 
 }

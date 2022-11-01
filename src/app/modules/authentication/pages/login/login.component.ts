@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
   ) {
     //redirect to home if already logged in
     if (this.authenticationService.currentUserValue?.token) {
-      this.router.navigate(['/dashboards']);
+      this.router.navigate(['/grade-management/customer-grade-list']);
     }
   }
 
@@ -53,12 +53,12 @@ export class LoginComponent implements OnInit {
       .subscribe({
         next: () => {
           // get return url from route parameters or default to '/'
-          const returnUrl = this.route?.snapshot.queryParams['returnUrl'] || '/dashboards';
+          const returnUrl = this.route?.snapshot.queryParams['returnUrl'] || '/grade-management/customer-grade-list';
           this.router?.navigate([returnUrl]);
         },
         error: error => {
           this.error = error;
-          this._Toastr.error(error);
+          this._Toastr.error("Username or password is incorrect");
           this.loading = false;
         }
       });

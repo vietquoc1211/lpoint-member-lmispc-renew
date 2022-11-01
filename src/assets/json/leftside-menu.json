@@ -2,7 +2,7 @@
     "dataMenu": [
         {
             "groupsTilte": "Dashboards",
-            "hideMenu": "0",
+            "hideMenu": "1",
             "Pages": [
                 {
                     "pageTitle": "Dashboards",

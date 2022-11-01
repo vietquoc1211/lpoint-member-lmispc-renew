@@ -3,7 +3,7 @@ export class CustomerGrade {
     membernm: string = '';
     gradecd: string = '';
     gradenm: string = '';
-    eevenue: string = '';
+    revenue: string = '';
     startymd: string = '';
     endymd: string = '';
     usegbn: string = '';

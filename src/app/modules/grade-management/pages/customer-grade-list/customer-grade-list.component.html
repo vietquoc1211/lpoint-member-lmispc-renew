@@ -71,16 +71,17 @@
                             <th mat-header-cell *matHeaderCellDef> Phân loại hạng </th>
                             <td mat-cell *matCellDef="let element"> {{element.gradenm}} </td>
                         </ng-container>
-                        <!-- Point Column -->
-                        <ng-container matColumnDef="point">
-                            <th mat-header-cell *matHeaderCellDef> Số điểm tích lũy </th>
-                            <td mat-cell *matCellDef="let element"> {{element.point | number }} </td>
+                        
+                        <!-- revenue Column -->
+                        <ng-container matColumnDef="revenue">
+                            <th mat-header-cell *matHeaderCellDef> Doanh thu tương ứng điểm </th>
+                            <td mat-cell *matCellDef="let element"> {{element.revenue | number }} </td>
                         </ng-container>
 
                         <!-- startymd Column -->
                         <ng-container matColumnDef="startymd">
-                            <th mat-header-cell *matHeaderCellDef> Ngày bắt đầu tham gia </th>
-                            <td mat-cell *matCellDef="let element"> {{element.startymd}} </td>
+                            <th mat-header-cell *matHeaderCellDef> Ngày áp dụng hạng </th>
+                            <td mat-cell *matCellDef="let element"> {{ element.startymd }} </td>
                         </ng-container>
 
                         <!-- Symbol endymd -->
@@ -112,7 +113,7 @@
 
                         <!-- transcnt Column -->
                         <ng-container matColumnDef="transcnt">
-                            <th mat-header-cell *matHeaderCellDef> Quá trình kiểm tra </th>
+                            <th mat-header-cell *matHeaderCellDef> Số lần giao dịch(đủ điều kiện)</th>
                             <td mat-cell *matCellDef="let element"> {{element.transcnt}} </td>
                         </ng-container>
 

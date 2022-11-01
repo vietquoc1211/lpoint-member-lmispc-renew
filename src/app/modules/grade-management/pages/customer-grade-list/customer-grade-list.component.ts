@@ -9,7 +9,7 @@ import { ConfirmationDialogComponent } from 'src/app/shared/component/confirmati
 import { CustomerGradeEditComponent } from '../customer-grade-edit/customer-grade-edit.component';
 import { MessageConstants } from 'src/app/core/_common/messageConstants';
 import { ToastrService } from 'ngx-toastr';
-import { CustomerGradeSearch } from '../../models/customer-grade.model';
+import { CustomerGrade, CustomerGradeSearch } from '../../models/customer-grade.model';
 import { CustomerGradeDetailDialogComponent } from '../customer-grade-detail-dialog/customer-grade-detail-dialog.component';
 @Component({
   selector: 'app-customer-grade-list',
@@ -17,14 +17,14 @@ import { CustomerGradeDetailDialogComponent } from '../customer-grade-detail-dia
   styleUrls: ['./customer-grade-list.component.css']
 })
 export class CustomerGradeListComponent implements OnInit {
-  DataGrade: any;
+  DataGrade: CustomerGrade[];
   isLoading = false;
   totalRows = 0;
   // pageSize = 10;
   // currentPage = 0;
   pageSizeOptions: number[] = [10, 25, 50, 100];
   dataSource = new MatTableDataSource();
-  displayedColumns = ['stt', 'memberno', 'membernm', 'grade', 'point', 'startymd', 'endymd', 'usegbn', 'transcnt', 'action'];
+  displayedColumns = ['stt', 'memberno', 'membernm', 'grade', 'revenue', 'startymd', 'endymd', 'usegbn', 'transcnt', 'action'];
   dataSearch: CustomerGradeSearch = new CustomerGradeSearch();
 
   public minDate: any;
@@ -91,11 +91,11 @@ export class CustomerGradeListComponent implements OnInit {
           key: "gradenm"
         },
         {
-          label: "Số điểm tích lũy",
-          key: "point"
+          label: "Doanh thu tương ứng điểm",
+          key: "revenue"
         },
         {
-          label: "Ngày bắt đầu tham gia",
+          label: "Ngày áp dụng hạng ",
           key: "startymd"
         },
         {
@@ -105,6 +105,10 @@ export class CustomerGradeListComponent implements OnInit {
         {
           label: "Trạng thái",
           key: "usegbn"
+        },
+        {
+          label: "Số lần giao dịch(đủ điều kiện)",
+          key: "transcnt"
         }
       ];
       this.csvService.downloadFile(res,fields,"customer-grade-list");
