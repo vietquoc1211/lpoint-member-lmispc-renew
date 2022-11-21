@@ -13,7 +13,7 @@ import { CustomerGradeService } from "../../services/customer-grade.service";
 })
 export class  CustomerGradeDetailDialogComponent {
   dataDetail: CustomerGradeDetail = new CustomerGradeDetail();
-  displayedColumns = ['memberno', 'asscd', 'gradenm','startymd', 'endymd', 'usegbn', 'point','updreason'];
+  displayedColumns = ['asscd','memberno', 'gradenm','startymd', 'endymd', 'usegbn', 'point','updreason'];
   dataHistory = new MatTableDataSource();
   memberno: string = '';
   constructor(private customergradeService: CustomerGradeService,
@@ -30,7 +30,7 @@ export class  CustomerGradeDetailDialogComponent {
   
   ngOnInit() {
     this.getData(this.memberno);
-    this.getDataHistory(this.memberno );
+    this.getDataHistory(this.memberno);
   }
 
 
